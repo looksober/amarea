@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Amarea · A/B Landing Wireframes</title>
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: #f0eee9; }
+  * { -webkit-font-smoothing: antialiased; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="wireframe-blocks.jsx"></script>
+<script type="text/babel" src="concept-a.jsx"></script>
+<script type="text/babel" src="concept-b.jsx"></script>
+<script type="text/babel" src="concept-c.jsx"></script>
+
+<script type="text/babel">
+const DESKTOP_W = 1200;
+const MOBILE_W = 390;
+
+// Each board grows to fit content; height prop is an estimate used only for
+// focus-mode scaling. Generous values; refined after measuring.
+const grow = { height: 'auto' };
+
+function Frame({ kind, w, children }) {
+  return kind === 'desktop'
+    ? <Browser w={w}>{children}</Browser>
+    : <Phone w={w}>{children}</Phone>;
+}
+
+function App() {
+  return (
+    <DesignCanvas>
+      <DCSection id="concept-a" title="Concept A · Aesthetic / Lifestyle"
+        subtitle={'"Own your countertop" — design-object framing, image-led'}>
+        <DCArtboard id="a1-d" label="A1 · Image-led hero — Desktop" width={DESKTOP_W} height={2280} style={grow}>
+          <Frame kind="desktop" w={DESKTOP_W}><ConceptA variation={1} device="desktop" /></Frame>
+        </DCArtboard>
+        <DCArtboard id="a1-m" label="A1 · Image-led hero — Mobile" width={MOBILE_W} height={2680} style={grow}>
+          <Frame kind="mobile" w={MOBILE_W}><ConceptA variation={1} device="mobile" /></Frame>
+        </DCArtboard>
+        <DCArtboard id="a2-d" label="A2 · Manifesto-first + sticky bar — Desktop" width={DESKTOP_W} height={2480} style={grow}>
+          <Frame kind="desktop" w={DESKTOP_W}><ConceptA variation={2} device="desktop" /></Frame>
+        </DCArtboard>
+        <DCArtboard id="a2-m" label="A2 · Manifesto-first + sticky bar — Mobile" width={MOBILE_W} height={2500} style={grow}>
+          <Frame kind="mobile" w={MOBILE_W}><ConceptA variation={2} device="mobile" /></Frame>
+        </DCArtboard>
+      </DCSection>
+
+      <DCSection id="concept-b" title="Concept B · Rational / Educational"
+        subtitle={'"Lightproof, zero snobbery" — proof & process framing'}>
+        <DCArtboard id="b1-d" label="B1 · Paradox-led — Desktop" width={DESKTOP_W} height={2480} style={grow}>
+          <Frame kind="desktop" w={DESKTOP_W}><ConceptB variation={1} device="desktop" /></Frame>
+        </DCArtboard>
+        <DCArtboard id="b1-m" label="B1 · Paradox-led — Mobile" width={MOBILE_W} height={2820} style={grow}>
+          <Frame kind="mobile" w={MOBILE_W}><ConceptB variation={1} device="mobile" /></Frame>
+        </DCArtboard>
+        <DCArtboard id="b2-d" label="B2 · Proof-forward + inline capture — Desktop" width={DESKTOP_W} height={2380} style={grow}>
+          <Frame kind="desktop" w={DESKTOP_W}><ConceptB variation={2} device="desktop" /></Frame>
+        </DCArtboard>
+        <DCArtboard id="b2-m" label="B2 · Proof-forward + inline capture — Mobile" width={MOBILE_W} height={2560} style={grow}>
+          <Frame kind="mobile" w={MOBILE_W}><ConceptB variation={2} device="mobile" /></Frame>
+        </DCArtboard>
+      </DCSection>
+
+      <DCSection id="concept-c" title="Concept C · Value / Everyday Premium"
+        subtitle={'"Premium isn\'t a luxury, it\'s a staple" — price & utility framing'}>
+        <DCArtboard id="c1-d" label="C1 · Pour-led — Desktop" width={DESKTOP_W} height={2260} style={grow}>
+          <Frame kind="desktop" w={DESKTOP_W}><ConceptC variation={1} device="desktop" /></Frame>
+        </DCArtboard>
+        <DCArtboard id="c1-m" label="C1 · Pour-led — Mobile" width={MOBILE_W} height={2730} style={grow}>
+          <Frame kind="mobile" w={MOBILE_W}><ConceptC variation={1} device="mobile" /></Frame>
+        </DCArtboard>
+        <DCArtboard id="c2-d" label="C2 · Value-comparison first — Desktop" width={DESKTOP_W} height={2660} style={grow}>
+          <Frame kind="desktop" w={DESKTOP_W}><ConceptC variation={2} device="desktop" /></Frame>
+        </DCArtboard>
+        <DCArtboard id="c2-m" label="C2 · Value-comparison first — Mobile" width={MOBILE_W} height={2790} style={grow}>
+          <Frame kind="mobile" w={MOBILE_W}><ConceptC variation={2} device="mobile" /></Frame>
+        </DCArtboard>
+      </DCSection>
+    </DesignCanvas>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

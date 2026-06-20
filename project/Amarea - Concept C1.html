@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Amarea · Premium isn't a luxury</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,100..900&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="amarea-tokens.css" />
+<link rel="stylesheet" href="amarea-landing.css" />
+<style>
+  /* C1-specific layout */
+  .hero { padding-top: var(--space-8); padding-bottom: var(--space-8); }
+  .hero__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-7); align-items: center; }
+  .hero__copy { display: flex; flex-direction: column; gap: var(--space-5); align-items: flex-start; }
+  .hero__copy .display { max-width: 12ch; font-size: clamp(38px, 5vw, 64px); }
+
+  /* Logo + language picker */
+  .logo img { display: block; height: 22px; width: auto; }
+  .lang { position: relative; }
+  .lang__current {
+    display: flex; align-items: center; gap: 6px;
+    font-family: var(--font-body); font-weight: var(--weight-bold);
+    font-size: var(--size-body-sm); letter-spacing: 0.04em;
+    color: var(--color-ink); background: none; border: 0;
+    padding: 6px 4px; cursor: pointer; line-height: 1;
+  }
+  .lang__chev { width: 9px; height: 9px; transition: transform var(--dur) var(--ease); }
+  .lang.is-open .lang__chev { transform: rotate(180deg); }
+  .lang__menu {
+    position: absolute; top: calc(100% + 8px); right: 0; z-index: 60;
+    display: none; flex-direction: column; min-width: 66px;
+    background: var(--color-bg-canvas); border: 1.5px solid var(--color-ink);
+  }
+  .lang.is-open .lang__menu { display: flex; }
+  .lang__opt {
+    font-family: var(--font-body); font-weight: var(--weight-bold);
+    font-size: var(--size-body-sm); letter-spacing: 0.04em; text-align: left;
+    color: var(--color-ink-subtle); background: none; border: 0;
+    padding: 10px 14px; cursor: pointer; line-height: 1;
+    transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
+  }
+  .lang__opt:hover { color: var(--color-ink); background: var(--color-bg-subtle); }
+
+  /* Origin section */
+  .origin__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-7); align-items: center; }
+  .origin image-slot { aspect-ratio: 4 / 5; }
+  .origin__copy { display: flex; flex-direction: column; gap: var(--space-4); align-items: flex-start; }
+  .origin__copy .lead { max-width: 46ch; }
+  .hero image-slot { aspect-ratio: 4 / 5; }
+
+  /* Price contrast cards */
+  .contrast__head { text-align: center; max-width: 40ch; margin: 0 auto var(--space-6); display: flex; flex-direction: column; align-items: center; gap: var(--space-3); }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); }
+  .pcard { border: 1.5px solid var(--color-ink); padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4); }
+  .pcard--dim { background: var(--color-bg-subtle); opacity: 0.92; }
+  .pcard--hero { background: var(--color-bg-tint); }
+  .pcard__name { font-family: var(--font-display); font-weight: var(--weight-bold); font-variation-settings: "wdth" var(--display-wdth); text-transform: uppercase; font-size: 15px; letter-spacing: 0.02em; }
+  .pcard__price { display: flex; align-items: baseline; gap: var(--space-2); }
+  .pcard__price .amt { font-family: var(--font-display); font-weight: var(--weight-black); font-variation-settings: "wdth" var(--display-wdth); font-size: 44px; line-height: 1; }
+  .pcard--dim .amt { text-decoration: line-through; text-decoration-thickness: 3px; color: var(--color-ink-muted); }
+  .pcard__unit { font-size: var(--size-body-sm); color: var(--color-ink-subtle); }
+  .pcard ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-3); }
+  .pcard li { display: flex; gap: var(--space-3); font-size: var(--size-body); line-height: 1.4; }
+  .pcard li .mk { font-family: var(--font-display); font-weight: 900; }
+
+  /* Pour band (full-bleed) */
+  .pour { position: relative; }
+  .pour image-slot { aspect-ratio: 21 / 9; border-left: 0; border-right: 0; }
+  .pour__scrim { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(14,39,22,0.72) 0%, rgba(14,39,22,0.3) 40%, rgba(14,39,22,0) 64%); }
+  .pour__overlay { position: absolute; inset: auto auto var(--space-7) 0; max-width: 32ch; padding: 0 var(--space-7); color: var(--white); }
+  .pour__overlay .display { color: var(--white); }
+  .pour__overlay .lead { color: rgba(255,255,255,0.88); margin-top: var(--space-3); }
+
+  /* Utility roadmap */
+  .util__head { margin-bottom: var(--space-6); }
+  .util { display: flex; flex-direction: column; gap: var(--space-4); }
+  .util__icon { width: 100%; aspect-ratio: 4 / 3; border: 1.5px solid var(--color-ink); display: flex; align-items: center; justify-content: center; background: var(--color-bg-canvas); }
+  .util__icon svg { width: 44%; height: 44%; }
+  .util__t { font-family: var(--font-display); font-weight: var(--weight-bold); font-variation-settings: "wdth" var(--display-wdth); text-transform: uppercase; font-size: 14px; letter-spacing: 0.02em; }
+  .util__d { font-size: var(--size-body-sm); color: var(--color-ink-muted); line-height: 1.45; }
+
+  /* Recyclable anchor */
+  .anchor__grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: var(--space-7); align-items: center; }
+
+  /* Close */
+  .close__inner { max-width: 720px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--space-5); }
+  .close .capture { margin: 0 auto; }
+  .close .capture__row { justify-content: center; }
+  .vita { font-style: italic; }
+
+  @media (max-width: 860px) {
+    .hero__grid, .anchor__grid, .origin__grid { grid-template-columns: 1fr; }
+    .cards { grid-template-columns: 1fr; }
+    .lang__opt { padding: 12px 16px; }
+    .util-grid { grid-template-columns: 1fr 1fr !important; }
+    .pour image-slot { aspect-ratio: 4 / 3; }
+    .pour__scrim { display: none; }
+    .pour__overlay { position: static; padding: var(--space-5); background: var(--color-bg-inverse); max-width: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ① STICKY BRAND BAR -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="#" class="logo"><img src="amarea-logo.svg" alt="Amarea" /></a>
+    <span class="nav__tag">Olio Extra Vergine di Oliva</span>
+    <div class="lang" role="group" aria-label="Language">
+      <button class="lang__current" type="button" aria-haspopup="listbox" aria-expanded="false">
+        <span class="lang__active">EN</span>
+        <svg class="lang__chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5 6 7.5 9 4.5"></path></svg>
+      </button>
+      <div class="lang__menu" role="listbox">
+        <button class="lang__opt" type="button">DE</button>
+        <button class="lang__opt" type="button">IT</button>
+        <button class="lang__opt" type="button">FR</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ② VALUE HERO (pour-led) -->
+<header class="hero am-stripes" data-screen-label="C1 / Hero">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow">Everyday premium EVOO · Swiss launch</p>
+      <h1 class="display d-2xl">GOOD OLIVE OIL DOESN’T NEED TO ACT PREMIUM.</h1>
+      <p class="lead">Cold-extracted, generous-pour olive oil priced for Tuesday nights — not just dinner parties. Good olive oil shouldn't feel exclusive.</p>
+      <span class="am-badge">This year's olive oil is sold out.</span>
+      <div class="capture">
+        <label class="capture__label" for="hero-email">Your email</label>
+        <div class="capture__row">
+          <input class="am-input" id="hero-email" type="email" placeholder="name@email.com" />
+          <button class="am-btn">Join the waiting list</button>
+        </div>
+        <p class="fineprint">We'll only write when the new olive oil is ready. No newsletters. No spam.</p>
+      </div>
+    </div>
+    <image-slot id="c1-hero" shape="rect" placeholder="HERO — oil poured generously over weeknight pasta, motion"></image-slot>
+  </div>
+</header>
+
+<!-- ③ PRICE CONTRAST -->
+<section class="section" data-screen-label="C1 / Contrast">
+  <div class="container">
+    <div class="contrast__head">
+      <p class="eyebrow">Deconstructing the snideness</p>
+      <h2 class="display d-md">The CHF 35 trophy bottle vs. the tin you actually use.</h2>
+    </div>
+    <div class="cards">
+      <div class="pcard pcard--dim">
+        <div class="pcard__name">The elitist deli bottle</div>
+        <div class="pcard__price"><span class="amt">CHF 35</span><span class="pcard__unit">/ bottle</span></div>
+        <ul>
+          <li><span class="mk">✕</span>Saved "for special occasions"</li>
+          <li><span class="mk">✕</span>Used twice a year</li>
+          <li><span class="mk">✕</span>Half of it oxidises before it's gone</li>
+        </ul>
+      </div>
+      <div class="pcard pcard--hero">
+        <div class="pcard__name">Amarea</div>
+        <div class="pcard__price"><span class="amt">CHF ~18</span><span class="pcard__unit">/ tin · everyday</span></div>
+        <ul>
+          <li><span class="mk">✓</span>Same cold-extracted quality</li>
+          <li><span class="mk">✓</span>Poured generously, guilt-free</li>
+          <li><span class="mk">✓</span>Finished fresh, refilled often</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ④ POUR BAND (full-bleed) -->
+<section class="pour fullbleed" data-screen-label="C1 / Pour band">
+  <image-slot id="c1-pour" shape="rect" placeholder="FULL-BLEED — generous pour over a shared table, warm everyday kitchen" fit="cover"></image-slot>
+  <div class="pour__scrim"></div>
+  <div class="pour__overlay">
+    <h2 class="display d-lg">Pour like you mean it.</h2>
+    <p class="lead">No rationing the good stuff. That's the whole point.</p>
+  </div>
+</section>
+
+<!-- ⑤ ORIGIN — made in southern italy -->
+<section class="origin section" data-screen-label="C1 / Origin">
+  <div class="container origin__grid">
+    <image-slot id="c1-origin" shape="rect" placeholder="ORIGIN — southern Italian grove, strong sun / the family table"></image-slot>
+    <div class="origin__copy">
+      <p class="eyebrow">Made in southern Italy</p>
+      <h2 class="display d-md">Good olives. Good weather. Good oil.</h2>
+      <p class="lead">We are passionate foodies living in Lucerne, but with roots in southern Italy. Where the sun is strong. Where people speak louder. Where flavor is not negotiable.</p>
+      <p class="lead">Down there, people take their time with the things that matter. Cooking. Eating. Talking. Staying at the table longer than planned.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ FUNCTIONAL UTILITY -->
+<section class="section" data-screen-label="C1 / Utility">
+  <div class="container">
+    <div class="util__head">
+      <p class="eyebrow">Functional utility</p>
+      <h2 class="display d-md" style="margin-top:var(--space-3)">Engineered for the way you actually cook.</h2>
+    </div>
+    <div class="grid-4 util-grid">
+      <div class="util">
+        <div class="util__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-ink)"><path d="M7 4h7l-1 5H8L7 4Z"/><path d="M10.5 9v4"/><path d="M9 13h3l1 7H8l1-7Z"/><path d="M13 6c3 0 4 1.5 4 3.5"/></svg>
+        </div>
+        <div class="util__t">Drip-free spout</div>
+        <div class="util__d">Clean pour, no greasy ring on the shelf.</div>
+      </div>
+      <div class="util">
+        <div class="util__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-ink)"><path d="M8 3h8v18H8z"/><path d="M10 3v18"/><path d="M14 3v18"/><path d="M12 6v2"/></svg>
+        </div>
+        <div class="util__t">Featherlight tin</div>
+        <div class="util__d">A fraction of a glass bottle's weight.</div>
+      </div>
+      <div class="util">
+        <div class="util__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-ink)"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7Z"/><path d="M9 9.5 11 12l4-4.5"/></svg>
+        </div>
+        <div class="util__t">Drop-proof</div>
+        <div class="util__d">Bounces. Doesn't shatter on tile.</div>
+      </div>
+      <div class="util">
+        <div class="util__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-ink)"><path d="M7 11V6a2 2 0 0 1 4 0v4"/><path d="M11 10V4.5a2 2 0 0 1 4 0V10"/><path d="M15 10V7a2 2 0 0 1 4 0v6a7 7 0 0 1-7 7h-1a6 6 0 0 1-5-3l-2.5-4a2 2 0 0 1 3.3-2.2L7 12"/></svg>
+        </div>
+        <div class="util__t">One-hand pour</div>
+        <div class="util__d">Balanced for mid-cook. No funnel needed.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ RECYCLABLE ANCHOR (dark band) -->
+<section class="section--inverse section" data-screen-label="C1 / Recyclable">
+  <div class="container anchor__grid">
+    <div>
+      <p class="eyebrow">Ethical &amp; recyclable</p>
+      <h2 class="display d-md" style="margin-top:var(--space-3)">Aluminium goes round forever. Glass mostly goes heavy.</h2>
+      <p class="lead" style="margin-top:var(--space-4); color:rgba(255,255,255,0.78)">Switzerland recycles aluminium at one of the highest rates in Europe — and it loses nothing on the way round.</p>
+    </div>
+    <div class="stats stats--4">
+      <div class="stat"><div class="stat__big">∞</div><div class="stat__small">recyclable, no quality loss</div></div>
+      <div class="stat"><div class="stat__big">~91%</div><div class="stat__small">Swiss aluminium recycling rate*</div></div>
+      <div class="stat"><div class="stat__big">−60%</div><div class="stat__small">shipping weight vs glass</div></div>
+      <div class="stat"><div class="stat__big">100%</div><div class="stat__small">kerbside recyclable</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑦ VALUE CLOSE (repeat capture) -->
+<section class="close section am-stripes" data-screen-label="C1 / Closing">
+  <div class="container close__inner">
+    <p class="eyebrow">Value-driven close · Batch 01</p>
+    <h2 class="display d-xl">Bring the <span class="vita">vita lenta</span> into your Tuesday night.</h2>
+    <p class="lead" style="text-align:center">Everyday premium, priced to actually pour. Get early access to the first Swiss batch.</p>
+    <div class="capture">
+      <div class="capture__row">
+        <input class="am-input" type="email" placeholder="name@email.com" />
+        <button class="am-btn">Get early access</button>
+      </div>
+      <p class="fineprint" style="text-align:center; margin-left:auto; margin-right:auto;">Launch pricing locked for the list. No spam.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <span class="logo"><img src="amarea-logo.svg" alt="Amarea" style="height:20px;width:auto;display:block;" /></span>
+    <span class="fineprint">* Recycling figures are placeholders — verify before launch. Olio Extra Vergine di Oliva · Zürich · © 2026</span>
+  </div>
+</footer>
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#C9E7C0"/>
+    <text x="50" y="58" font-family="Archivo, sans-serif" font-weight="900" font-size="20" fill="#173B23" text-anchor="middle">C1</text>
+  </svg>
+</template>
+
+<script src="image-slot.js"></script>
+<script>
+(function(){
+  document.querySelectorAll('.lang').forEach(function(lang){
+    var current = lang.querySelector('.lang__current');
+    var active = lang.querySelector('.lang__active');
+    current.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = lang.classList.toggle('is-open');
+      current.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    lang.querySelectorAll('.lang__opt').forEach(function(opt){
+      opt.addEventListener('click', function(){
+        var picked = opt.textContent;
+        opt.textContent = active.textContent;
+        active.textContent = picked;
+        lang.classList.remove('is-open');
+        current.setAttribute('aria-expanded', 'false');
+      });
+    });
+  });
+  document.addEventListener('click', function(){
+    document.querySelectorAll('.lang.is-open').forEach(function(l){
+      l.classList.remove('is-open');
+      var c = l.querySelector('.lang__current');
+      if (c) c.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+</body>
+</html>

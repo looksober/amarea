@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Amarea · Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,100..900&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="amarea-tokens.css" />
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--color-bg-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 var(--space-6) var(--space-10); }
+
+  /* Masthead */
+  header.ds-head {
+    padding: var(--space-8) var(--space-6) var(--space-7);
+    max-width: 1100px; margin: 0 auto;
+  }
+  .ds-logo {
+    font-family: var(--font-display); font-weight: var(--weight-black);
+    font-variation-settings: "wdth" var(--display-wdth);
+    font-size: 44px; letter-spacing: -0.02em; text-transform: lowercase; color: var(--color-ink);
+  }
+  .ds-kicker {
+    font-family: var(--font-display); font-weight: var(--weight-bold);
+    font-variation-settings: "wdth" var(--display-wdth);
+    text-transform: uppercase; letter-spacing: var(--tracking-eyebrow);
+    font-size: 13px; color: var(--color-ink-muted); margin-top: var(--space-3);
+  }
+  .ds-sub { font-size: var(--size-body-lg); color: var(--color-ink-muted); max-width: 620px; margin-top: var(--space-4); line-height: 1.5; }
+
+  /* Section scaffold */
+  section { padding-top: var(--space-8); }
+  .sec-num {
+    font-family: var(--font-body); font-weight: 700; font-size: 13px;
+    color: var(--color-accent-strong); letter-spacing: 0.04em;
+  }
+  h2.sec-title {
+    font-family: var(--font-display); font-weight: var(--weight-black);
+    font-variation-settings: "wdth" var(--display-wdth);
+    text-transform: uppercase; letter-spacing: -0.01em;
+    font-size: 30px; margin: var(--space-2) 0 var(--space-2); color: var(--color-ink);
+  }
+  .sec-desc { color: var(--color-ink-subtle); max-width: 640px; margin: 0 0 var(--space-6); line-height: 1.55; }
+  .rule { height: 1.5px; background: var(--color-ink); border: 0; margin-top: var(--space-7); }
+  .grp-label {
+    font-family: var(--font-body); font-weight: 700; font-size: 12px; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--color-ink-subtle); margin: var(--space-6) 0 var(--space-3);
+  }
+
+  /* Color swatches */
+  .swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--space-3); }
+  .swatch { border: 1px solid var(--color-border-subtle); }
+  .swatch .chip { height: 84px; }
+  .swatch .meta { padding: 10px 12px; }
+  .swatch .nm { font-weight: 700; font-size: 13px; }
+  .swatch .hex { font-family: ui-monospace, monospace; font-size: 11px; color: var(--color-ink-subtle); margin-top: 2px; }
+
+  .token-row { display: grid; grid-template-columns: 220px 1fr; gap: var(--space-4); align-items: center; padding: 10px 0; border-bottom: 1px solid var(--color-border-subtle); }
+  .token-row code { font-family: ui-monospace, monospace; font-size: 12px; color: var(--color-ink); }
+  .token-row .maps { font-size: 13px; color: var(--color-ink-subtle); display: flex; align-items: center; gap: 10px; }
+  .dot { width: 18px; height: 18px; border: 1px solid var(--color-border-subtle); flex: 0 0 auto; }
+
+  /* Type specimens */
+  .type-row { display: grid; grid-template-columns: 130px 1fr; gap: var(--space-5); align-items: baseline; padding: var(--space-4) 0; border-bottom: 1px solid var(--color-border-subtle); }
+  .type-row .spec { font-family: ui-monospace, monospace; font-size: 11px; color: var(--color-ink-subtle); line-height: 1.5; }
+
+  /* Spacing */
+  .space-row { display: flex; align-items: center; gap: var(--space-4); padding: 7px 0; }
+  .space-bar { background: var(--color-accent); height: 16px; }
+  .space-row code { font-family: ui-monospace, monospace; font-size: 12px; width: 130px; flex: 0 0 auto; }
+
+  /* Components showcase */
+  .comp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6); }
+  .comp-card { border: 1px solid var(--color-border-subtle); padding: var(--space-6); }
+  .comp-card .ttl { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-ink-subtle); margin-bottom: var(--space-5); }
+  .stack { display: flex; flex-direction: column; gap: var(--space-4); align-items: flex-start; }
+  .row { display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center; }
+
+  .radius-demo { display: flex; gap: var(--space-5); }
+  .radius-demo .b { width: 70px; height: 70px; background: var(--green-200); border: 1.5px solid var(--color-ink); display: flex; align-items: flex-end; justify-content: center; font-size: 10px; font-family: ui-monospace, monospace; padding-bottom: 4px; color: var(--color-ink); }
+
+  .stripe-demo { height: 90px; border: 1px solid var(--color-border-subtle); }
+</style>
+</head>
+<body>
+
+<header class="ds-head">
+  <div class="ds-logo">amarea</div>
+  <div class="ds-kicker">Olio Extra Vergine di Oliva · Design System v1</div>
+  <p class="ds-sub">A confident, anti-elitist olive-oil brand. Forest-green ink, signature mint stripes, wide uppercase display type, and an almost-flat, square-cornered aesthetic. Tokens flow primitives → semantic so the real fonts and any tuning drop in one place.</p>
+</header>
+
+<div class="wrap">
+
+  <!-- 1. COLOR -->
+  <section>
+    <div class="sec-num">01 — Primitives</div>
+    <h2 class="sec-title">Colour</h2>
+    <p class="sec-desc">One dominant green scale carries the whole brand — forest at the dark end (ink, buttons), mint in the middle (the stripe), pale tints at the light end. Neutrals lean warm. Olive-gold is a rare accent, mostly living in photography.</p>
+
+    <div class="grp-label">Green scale</div>
+    <div class="swatch-grid" id="greens"></div>
+
+    <div class="grp-label">Neutrals</div>
+    <div class="swatch-grid" id="neutrals"></div>
+
+    <div class="grp-label">Olive-gold · use sparingly</div>
+    <div class="swatch-grid" id="golds"></div>
+  </section>
+
+  <!-- 2. SEMANTIC COLOR -->
+  <section>
+    <div class="sec-num">02 — Semantic tokens</div>
+    <h2 class="sec-title">Colour, by intent</h2>
+    <p class="sec-desc">Components never reference a raw primitive. They reach for intent — <code>--color-ink</code>, <code>--button-bg</code>, <code>--badge-border</code> — which maps to a primitive here. Re-point one line and the whole system follows.</p>
+    <div id="semantic-colors"></div>
+  </section>
+
+  <!-- 3. TYPE -->
+  <section>
+    <div class="sec-num">01 — Primitives</div>
+    <h2 class="sec-title">Typography</h2>
+    <p class="sec-desc">Display: <strong>Monument Extended Black</strong> — wide, uppercase, set here with Archivo at full width + weight 900 as the swappable Google stand-in. Body: <strong>Founders Grotesk</strong> — shown with Hanken Grotesk. Override <code>--font-display</code> / <code>--font-body</code> to drop in the licensed faces.</p>
+    <div id="type-scale"></div>
+  </section>
+
+  <!-- 4. SPACING -->
+  <section>
+    <div class="sec-num">01 — Primitives</div>
+    <h2 class="sec-title">Spacing &amp; radius</h2>
+    <p class="sec-desc">A 4-based spacing scale keeps rhythm consistent. Radius is deliberately near-zero — the brand is square. Only the status pill and badges take a small 4px round.</p>
+    <div class="grp-label">Spacing scale</div>
+    <div id="spacing"></div>
+    <div class="grp-label">Radius</div>
+    <div class="radius-demo">
+      <div class="b" style="border-radius:var(--radius-none)">none</div>
+      <div class="b" style="border-radius:var(--radius-sm)">sm·4</div>
+      <div class="b" style="border-radius:var(--radius-pill)">pill</div>
+    </div>
+    <div class="grp-label">Signature stripe pattern</div>
+    <div class="stripe-demo am-stripes"></div>
+  </section>
+
+  <!-- 5. COMPONENTS -->
+  <section>
+    <div class="sec-num">03 — Components</div>
+    <h2 class="sec-title">Components</h2>
+    <p class="sec-desc">Built entirely from semantic tokens. Square corners, forest ink, hairline borders, generous padding.</p>
+    <div class="comp-grid">
+      <div class="comp-card">
+        <div class="ttl">Buttons</div>
+        <div class="stack">
+          <a class="am-btn" href="#">Join the waiting list</a>
+          <a class="am-btn am-btn--ghost" href="#">See the price</a>
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="ttl">Status badge</div>
+        <div class="stack">
+          <span class="am-badge">This year's olive oil is sold out.</span>
+          <span class="am-badge" style="--badge-bg:var(--green-200);--badge-border:transparent;">Batch 01 · Limited</span>
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="ttl">Email capture</div>
+        <div style="display:flex; gap:var(--space-2); width:100%;">
+          <input class="am-input" placeholder="name@email.com" />
+          <a class="am-btn" href="#" style="white-space:nowrap;">Join</a>
+        </div>
+        <div style="font-size:13px; color:var(--color-ink-subtle); margin-top:10px;">We'll only write when the new olive oil is ready. No spam.</div>
+      </div>
+      <div class="comp-card">
+        <div class="ttl">Eyebrow + display</div>
+        <div class="am-eyebrow">Good olive oil</div>
+        <div class="am-display" style="font-size:30px; margin-top:8px;">Shouldn't feel exclusive</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+  <p style="font-size:13px; color:var(--color-ink-subtle); margin-top:var(--space-5);">Amarea Design System · primitives → semantic tokens → components. Stand-in fonts: Archivo (display), Hanken Grotesk (body).</p>
+</div>
+
+<script>
+  const mk = (parent, items) => {
+    const el = document.getElementById(parent);
+    el.innerHTML = items.map(([nm, v]) => `
+      <div class="swatch">
+        <div class="chip" style="background:${v}"></div>
+        <div class="meta"><div class="nm">${nm}</div><div class="hex">${v}</div></div>
+      </div>`).join('');
+  };
+  const css = getComputedStyle(document.documentElement);
+  const g = n => css.getPropertyValue(n).trim();
+
+  mk('greens', ['950','900','800','700','600','500','400','300','200','100','50'].map(s => [`green-${s}`, g(`--green-${s}`)]));
+  mk('neutrals', [['white', g('--white')],['paper', g('--paper')],['neutral-200', g('--neutral-200')],['neutral-400', g('--neutral-400')],['neutral-600', g('--neutral-600')]]);
+  mk('golds', [['gold-500', g('--gold-500')],['gold-300', g('--gold-300')]]);
+
+  // Semantic color rows
+  const sem = [
+    ['--color-ink','green-900'],['--color-ink-muted','green-700'],['--color-ink-subtle','neutral-600'],
+    ['--color-bg-canvas','white'],['--color-bg-subtle','green-50'],['--color-bg-tint','green-100'],
+    ['--color-bg-inverse','green-900'],['--color-bg-stripe-a','green-200'],
+    ['--color-border','green-900'],['--color-accent','green-500'],
+    ['--button-bg','green-900'],['--badge-bg','green-100'],['--badge-border','green-500'],['--input-border','green-900'],
+  ];
+  document.getElementById('semantic-colors').innerHTML = sem.map(([t, maps]) => `
+    <div class="token-row">
+      <code>${t}</code>
+      <div class="maps"><span class="dot" style="background:${g(t)}"></span><code>→ ${maps}</code><span style="font-family:ui-monospace,monospace;font-size:11px;color:var(--color-ink-subtle)">${g(t)}</span></div>
+    </div>`).join('');
+
+  // Type scale
+  const types = [
+    ['display-2xl','--size-display-2xl','Fat. But the good kind.','am-display'],
+    ['display-xl','--size-display-xl','Olive oil grew up','am-display'],
+    ['display-lg','--size-display-lg','Shouldn\'t feel exclusive','am-display'],
+    ['display-md','--size-display-md','One ingredient chefs never skip','am-display'],
+    ['heading','--size-heading','Use it like chefs do','am-display'],
+    ['eyebrow','--size-eyebrow','Olio Extra Vergine di Oliva','am-eyebrow'],
+  ];
+  const body = [
+    ['body-lg','--size-body-lg','The next order will be possible in October. Join the waiting list and we\'ll let you know first.'],
+    ['body','--size-body','Everyone deserves good olive oil. Amarea isn\'t meant only for special occasions.'],
+    ['body-sm','--size-body-sm','We\'ll only write when the new olive oil is ready. No newsletters. No spam.'],
+  ];
+  document.getElementById('type-scale').innerHTML =
+    types.map(([nm, vv, txt, cls]) => `
+      <div class="type-row">
+        <div class="spec">${nm}<br>${g(vv)}<br>display · 900</div>
+        <div class="${cls}" style="font-size:${g(vv)}">${txt}</div>
+      </div>`).join('')
+    + `<div class="grp-label">Body · Founders Grotesk (Hanken stand-in)</div>` +
+    body.map(([nm, vv, txt]) => `
+      <div class="type-row">
+        <div class="spec">${nm}<br>${g(vv)}<br>body · 400</div>
+        <div class="am-body" style="font-size:${g(vv)}; max-width:560px">${txt}</div>
+      </div>`).join('');
+
+  // Spacing
+  document.getElementById('spacing').innerHTML = [1,2,3,4,5,6,7,8,9,10].map(n => {
+    const v = g(`--space-${n}`);
+    return `<div class="space-row"><code>--space-${n}</code><div class="space-bar" style="width:${v}"></div><span style="font-size:12px;color:var(--color-ink-subtle)">${v}</span></div>`;
+  }).join('');
+</script>
+</body>
+</html>

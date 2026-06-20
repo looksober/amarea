@@ -1,0 +1,256 @@
+/* ============================================================================
+   AMAREA · DESIGN TOKENS
+   Layer 1 — PRIMITIVES (raw values, brand-agnostic names)
+   Layer 2 — SEMANTIC TOKENS (intent-based, reference primitives)
+   Swap the real fonts (Monument Extended Black / Founders Grotesk) by
+   overriding --font-display / --font-body; everything else cascades.
+   ============================================================================ */
+
+:root {
+  /* ──────────────────────────────────────────────────────────────────────
+     1. PRIMITIVES
+     ────────────────────────────────────────────────────────────────────── */
+
+  /* Green scale — Amarea's core. Forest at the dark end, mint at the light. */
+  --green-950: #0E2716;
+  --green-900: #173B23;   /* primary "ink" — logo, headlines, body, buttons  */
+  --green-800: #1E4A2C;
+  --green-700: #2B6238;
+  --green-600: #3C7C49;
+  --green-500: #5A9E63;   /* mid leaf — accents, focus                       */
+  --green-400: #84BC86;
+  --green-300: #A7D6A2;
+  --green-200: #C9E7C0;   /* signature stripe mint                           */
+  --green-100: #DCEFD3;   /* pale tint — badges, soft fills                  */
+  --green-50:  #EFF8EB;   /* lightest surface                               */
+
+  /* Neutrals — warm-leaning paper, not pure grey */
+  --white:      #FFFFFF;
+  --paper:      #FBFCF9;  /* off-white canvas                               */
+  --neutral-200:#E4E8E0;
+  --neutral-400:#AEB6A8;
+  --neutral-600:#6E776A;
+
+  /* Olive-gold — used VERY sparingly (drizzle highlights, rare accent) */
+  --gold-500: #C9A23C;
+  --gold-300: #E4C878;
+
+  /* Typeface families */
+  --font-display: "Archivo", "Arial Narrow", system-ui, sans-serif; /* stand-in for Monument Extended Black */
+  --font-body:    "Hanken Grotesk", system-ui, -apple-system, sans-serif; /* stand-in for Founders Grotesk */
+
+  /* Font weights */
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-bold:    700;
+  --weight-black:   900;
+
+  /* Width axis (Archivo variable) — used to fake Monument's extended width */
+  --display-wdth: 125;
+
+  /* Type scale (px) — display uses wide black caps, body uses grotesk */
+  --size-display-2xl: 76px;
+  --size-display-xl:  58px;
+  --size-display-lg:  44px;
+  --size-display-md:  32px;
+  --size-heading:     22px;
+  --size-body-lg:     19px;
+  --size-body:        16px;
+  --size-body-sm:     14px;
+  --size-eyebrow:     12px;
+
+  /* Line heights */
+  --leading-tight:   0.98;
+  --leading-snug:    1.12;
+  --leading-normal:  1.5;
+
+  /* Letter spacing */
+  --tracking-display: -0.01em;
+  --tracking-eyebrow:  0.16em;
+  --tracking-label:    0.08em;
+
+  /* Spacing scale (4-base) */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  /* Radius — brand is overwhelmingly square */
+  --radius-none: 0px;
+  --radius-sm:   4px;     /* status pill / badge                            */
+  --radius-pill: 999px;
+
+  /* Borders */
+  --border-width: 1.5px;
+
+  /* Stripe geometry (signature pattern) — wide, generous gaps for legibility */
+  --stripe-w: 44px;       /* width of one colour band                       */
+
+  /* Shadows — minimal, brand is flat. Soft lift for the product can only. */
+  --shadow-product: 0 30px 60px -20px rgba(14,39,22,0.35);
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur:  180ms;
+
+  /* Layout */
+  --maxw: 1200px;
+
+  /* ──────────────────────────────────────────────────────────────────────
+     2. SEMANTIC TOKENS  (what things MEAN — reference primitives above)
+     ────────────────────────────────────────────────────────────────────── */
+
+  /* Surfaces */
+  --color-bg-canvas:    var(--white);
+  --color-bg-paper:     var(--paper);
+  --color-bg-subtle:    var(--green-50);
+  --color-bg-tint:      var(--green-100);
+  --color-bg-inverse:   var(--green-900);
+  --color-bg-stripe-a:  var(--green-100);
+  --color-bg-stripe-b:  var(--white);
+
+  /* Text */
+  --color-ink:          var(--green-900);   /* default text + headlines      */
+  --color-ink-muted:    var(--green-700);
+  --color-ink-subtle:   var(--neutral-600);
+  --color-ink-inverse:  var(--white);
+  --color-ink-on-tint:  var(--green-900);
+
+  /* Lines & borders */
+  --color-border:        var(--green-900);  /* input + button outlines       */
+  --color-border-subtle: var(--neutral-200);
+
+  /* Accent */
+  --color-accent:        var(--green-500);
+  --color-accent-strong: var(--green-600);
+
+  /* Button — primary (solid forest) */
+  --button-bg:        var(--green-900);
+  --button-bg-hover:  var(--green-800);
+  --button-text:      var(--white);
+  --button-radius:    var(--radius-none);
+
+  /* Button — secondary (outline) */
+  --button-ghost-border: var(--green-900);
+  --button-ghost-text:   var(--green-900);
+  --button-ghost-hover:  var(--green-50);
+
+  /* Input field */
+  --input-bg:          var(--white);
+  --input-border:      var(--green-900);
+  --input-text:        var(--green-900);
+  --input-placeholder: var(--neutral-400);
+  --input-radius:      var(--radius-none);
+
+  /* Status badge / pill */
+  --badge-bg:     var(--green-100);
+  --badge-text:   var(--green-800);
+  --badge-border: var(--green-500);
+  --badge-radius: var(--radius-sm);
+
+  /* Eyebrow / kicker */
+  --eyebrow-color: var(--green-700);
+
+  /* Focus ring */
+  --focus-ring: var(--green-500);
+}
+
+/* ============================================================================
+   BASE HELPERS — small set of brand-true utilities the pages share
+   ============================================================================ */
+
+.am-stripes {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-bg-stripe-a) 0, var(--color-bg-stripe-a) var(--stripe-w),
+    var(--color-bg-stripe-b) var(--stripe-w), var(--color-bg-stripe-b) calc(var(--stripe-w) * 2)
+  );
+}
+
+.am-display {
+  font-family: var(--font-display);
+  font-weight: var(--weight-black);
+  font-variation-settings: "wdth" var(--display-wdth);
+  text-transform: uppercase;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-display);
+  color: var(--color-ink);
+  margin: 0;
+  text-wrap: balance;
+}
+
+.am-eyebrow {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-variation-settings: "wdth" var(--display-wdth);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  font-size: var(--size-eyebrow);
+  color: var(--eyebrow-color);
+}
+
+.am-body {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--color-ink);
+}
+
+.am-btn {
+  font-family: var(--font-body);
+  font-weight: var(--weight-bold);
+  font-size: var(--size-body);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 26px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: var(--border-width) solid var(--button-bg);
+  border-radius: var(--button-radius);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--dur) var(--ease);
+}
+.am-btn:hover { background: var(--button-bg-hover); border-color: var(--button-bg-hover); }
+
+.am-btn--ghost {
+  background: transparent;
+  color: var(--button-ghost-text);
+  border-color: var(--button-ghost-border);
+}
+.am-btn--ghost:hover { background: var(--button-ghost-hover); }
+
+.am-input {
+  font-family: var(--font-body);
+  font-size: var(--size-body);
+  background: var(--input-bg);
+  color: var(--input-text);
+  border: var(--border-width) solid var(--input-border);
+  border-radius: var(--input-radius);
+  padding: 16px 18px;
+  width: 100%;
+  outline: none;
+}
+.am-input::placeholder { color: var(--input-placeholder); }
+.am-input:focus { box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus-ring) 40%, transparent); }
+
+.am-badge {
+  font-family: var(--font-body);
+  font-weight: var(--weight-bold);
+  font-size: var(--size-body-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  border: 1px solid var(--badge-border);
+  border-radius: var(--badge-radius);
+}

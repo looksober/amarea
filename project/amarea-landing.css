@@ -1,0 +1,126 @@
+/* ============================================================================
+   AMAREA · LANDING PAGE SHARED STYLES
+   Layout patterns built ENTIRELY from semantic tokens in amarea-tokens.css.
+   Used by both Concept A2 and Concept C1.
+   ============================================================================ */
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--color-bg-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { display: block; max-width: 100%; }
+
+.container { max-width: var(--maxw); margin: 0 auto; padding-left: var(--space-6); padding-right: var(--space-6); }
+
+/* ── Sticky brand bar ─────────────────────────────────────────────────────*/
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--color-bg-canvas);
+  border-bottom: 1.5px solid var(--color-ink);
+}
+.nav__inner {
+  max-width: var(--maxw); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-5);
+  padding: var(--space-3) var(--space-6);
+}
+.logo {
+  font-family: var(--font-display); font-weight: var(--weight-black);
+  font-variation-settings: "wdth" var(--display-wdth);
+  font-size: 30px; letter-spacing: -0.02em; text-transform: lowercase;
+  color: var(--color-ink); line-height: 1; text-decoration: none;
+}
+.nav__tag {
+  font-family: var(--font-display); font-weight: var(--weight-bold);
+  font-variation-settings: "wdth" var(--display-wdth);
+  text-transform: uppercase; letter-spacing: var(--tracking-eyebrow);
+  font-size: 12px; color: var(--color-ink-muted);
+}
+.nav__cta { display: flex; align-items: center; gap: var(--space-2); }
+.nav__cta .am-input { width: 200px; padding: 10px 14px; }
+.nav__cta .am-btn { padding: 11px 18px; font-size: var(--size-body-sm); }
+
+/* ── Section scaffolding ──────────────────────────────────────────────────*/
+.section { padding-top: var(--space-9); padding-bottom: var(--space-9); }
+.section--tight { padding-top: var(--space-8); padding-bottom: var(--space-8); }
+.section--inverse { background: var(--color-bg-inverse); color: var(--color-ink-inverse); }
+.section--inverse .display, .section--inverse .eyebrow, .section--inverse .lead { color: var(--color-ink-inverse); }
+
+.eyebrow {
+  font-family: var(--font-display); font-weight: var(--weight-bold);
+  font-variation-settings: "wdth" var(--display-wdth);
+  text-transform: uppercase; letter-spacing: var(--tracking-eyebrow);
+  font-size: var(--size-eyebrow); color: var(--eyebrow-color); margin: 0;
+}
+.display {
+  font-family: var(--font-display); font-weight: var(--weight-black);
+  font-variation-settings: "wdth" var(--display-wdth);
+  text-transform: uppercase; line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-display); color: var(--color-ink);
+  margin: 0; text-wrap: balance;
+}
+.d-2xl { font-size: var(--size-display-2xl); }
+.d-xl  { font-size: var(--size-display-xl); }
+.d-lg  { font-size: var(--size-display-lg); }
+.d-md  { font-size: var(--size-display-md); }
+.d-sm  { font-size: var(--size-heading); }
+
+.lead { font-size: var(--size-body-lg); line-height: 1.5; color: var(--color-ink); margin: 0; max-width: 52ch; text-wrap: pretty; }
+.muted { color: var(--color-ink-subtle); }
+.fineprint { font-size: var(--size-body-sm); color: var(--color-ink-subtle); }
+
+/* ── Email capture block ──────────────────────────────────────────────────*/
+.capture { max-width: 480px; }
+.capture__label { font-weight: 700; font-size: var(--size-body-sm); margin-bottom: var(--space-2); display: block; }
+.capture__row { display: flex; gap: var(--space-2); }
+.capture__row .am-input { flex: 1; }
+.capture__row .am-btn { white-space: nowrap; }
+.capture .fineprint { margin-top: var(--space-2); max-width: 42ch; }
+
+/* ── Image slots ─────────────────────────────────────────────────────────*/
+image-slot { display: block; width: 100%; height: auto !important; background: var(--green-50); border: 1.5px solid var(--color-ink); }
+.fullbleed image-slot { border-left: 0; border-right: 0; }
+
+/* ── Stat grid (dark anchor bands) ────────────────────────────────────────*/
+.stats { display: grid; gap: 1.5px; background: rgba(255,255,255,0.18); border: 1.5px solid rgba(255,255,255,0.18); }
+.stats--4 { grid-template-columns: repeat(4, 1fr); }
+.stats--3 { grid-template-columns: repeat(3, 1fr); }
+.stat { background: var(--color-bg-inverse); padding: var(--space-5); }
+.stat__big {
+  font-family: var(--font-display); font-weight: var(--weight-black);
+  font-variation-settings: "wdth" var(--display-wdth);
+  font-size: 30px; color: var(--white); line-height: 1; text-transform: uppercase;
+}
+.stat__small { font-size: var(--size-body-sm); color: rgba(255,255,255,0.72); margin-top: var(--space-2); line-height: 1.35; }
+
+/* ── Generic grids ────────────────────────────────────────────────────────*/
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5); }
+
+/* ── Footer ───────────────────────────────────────────────────────────────*/
+.footer { border-top: 1.5px solid var(--color-ink); padding: var(--space-6); }
+.footer__inner { max-width: var(--maxw); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4); }
+.footer .fineprint { font-size: 12px; }
+
+/* ── Responsive ───────────────────────────────────────────────────────────*/
+@media (max-width: 860px) {
+  :root {
+    --size-display-2xl: 44px;
+    --size-display-xl: 38px;
+    --size-display-lg: 30px;
+    --size-display-md: 24px;
+  }
+  .container { padding-left: var(--space-5); padding-right: var(--space-5); }
+  .section, .section--tight { padding-top: var(--space-7); padding-bottom: var(--space-7); }
+  .grid-3, .grid-2, .grid-4 { grid-template-columns: 1fr; }
+  .stats--4 { grid-template-columns: 1fr 1fr; }
+  .nav__tag { display: none; }
+  .nav__cta .am-input { display: none; }
+  .capture__row { flex-direction: column; }
+  .capture__row .am-btn { width: 100%; }
+}
