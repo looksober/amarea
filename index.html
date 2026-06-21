@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Amarea · One ingredient chefs never skip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,100..900&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+/* ─── DESIGN TOKENS ──────────────────────────────────────────────────────── */
+:root {
+  /* Green scale */
+  --green-950: #0E2716;
+  --green-900: #173B23;
+  --green-800: #1E4A2C;
+  --green-700: #2B6238;
+  --green-600: #3C7C49;
+  --green-500: #5A9E63;
+  --green-400: #84BC86;
+  --green-300: #A7D6A2;
+  --green-200: #C9E7C0;
+  --green-100: #DCEFD3;
+  --green-50:  #EFF8EB;
+
+  --white:       #FFFFFF;
+  --paper:       #FBFCF9;
+  --neutral-200: #E4E8E0;
+  --neutral-400: #AEB6A8;
+  --neutral-600: #6E776A;
+
+  --font-display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+  --font-body:    "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-bold:    700;
+  --weight-black:   900;
+
+  --display-wdth: 125;
+
+  --size-display-2xl: 76px;
+  --size-display-xl:  58px;
+  --size-display-lg:  44px;
+  --size-display-md:  32px;
+  --size-heading:     22px;
+  --size-body-lg:     19px;
+  --size-body:        16px;
+  --size-body-sm:     14px;
+  --size-eyebrow:     12px;
+
+  --leading-tight:  0.98;
+  --leading-normal: 1.5;
+
+  --tracking-display: -0.01em;
+  --tracking-eyebrow:  0.16em;
+
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+
+  --radius-none: 0px;
+  --radius-sm:   4px;
+
+  --border-width: 1.5px;
+  --stripe-w:     44px;
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur:  180ms;
+
+  --maxw: 1200px;
+
+  /* Semantic */
+  --color-bg-canvas:   var(--white);
+  --color-bg-subtle:   var(--green-50);
+  --color-bg-inverse:  var(--green-900);
+  --color-bg-stripe-a: var(--green-100);
+  --color-bg-stripe-b: var(--white);
+
+  --color-ink:         var(--green-900);
+  --color-ink-muted:   var(--green-700);
+  --color-ink-subtle:  var(--neutral-600);
+
+  --color-border:        var(--green-900);
+  --color-border-subtle: var(--neutral-200);
+
+  --color-accent:        var(--green-500);
+  --color-accent-strong: var(--green-600);
+
+  --button-bg:       var(--green-900);
+  --button-bg-hover: var(--green-800);
+  --button-text:     var(--white);
+
+  --input-bg:          var(--white);
+  --input-border:      var(--green-900);
+  --input-text:        var(--green-900);
+  --input-placeholder: var(--neutral-400);
+
+  --badge-bg:     var(--green-100);
+  --badge-text:   var(--green-800);
+  --badge-border: var(--green-500);
+
+  --eyebrow-color: var(--green-700);
+  --focus-ring:    var(--green-500);
+}
+
+/* ─── BASE ───────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--color-bg-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { display: block; max-width: 100%; }
+h1, h2, h3, p, ul, figure { margin: 0; }
+
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+}
+
+/* ─── STRIPE ─────────────────────────────────────────────────────────────── */
+.am-stripes {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-bg-stripe-a) 0, var(--color-bg-stripe-a) var(--stripe-w),
+    var(--color-bg-stripe-b) var(--stripe-w), var(--color-bg-stripe-b) calc(var(--stripe-w) * 2)
+  );
+}
+
+/* ─── TYPOGRAPHY ─────────────────────────────────────────────────────────── */
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-variation-settings: "wdth" var(--display-wdth);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  font-size: var(--size-eyebrow);
+  color: var(--eyebrow-color);
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: var(--weight-black);
+  font-variation-settings: "wdth" var(--display-wdth);
+  text-transform: uppercase;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-display);
+  color: var(--color-ink);
+  text-wrap: balance;
+}
+
+.d-2xl { font-size: var(--size-display-2xl); }
+.d-xl  { font-size: var(--size-display-xl);  }
+.d-lg  { font-size: var(--size-display-lg);  }
+.d-md  { font-size: var(--size-display-md);  }
+.d-sm  { font-size: var(--size-heading);     }
+
+.lead {
+  font-size: var(--size-body-lg);
+  line-height: 1.5;
+  color: var(--color-ink);
+  max-width: 52ch;
+  text-wrap: pretty;
+}
+
+.fineprint {
+  font-size: var(--size-body-sm);
+  color: var(--color-ink-subtle);
+}
+
+/* ─── COMPONENTS ─────────────────────────────────────────────────────────── */
+
+/* Button */
+.am-btn {
+  font-family: var(--font-body);
+  font-weight: var(--weight-bold);
+  font-size: var(--size-body);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 26px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: var(--border-width) solid var(--button-bg);
+  border-radius: var(--radius-none);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background var(--dur) var(--ease);
+}
+.am-btn:hover { background: var(--button-bg-hover); border-color: var(--button-bg-hover); }
+
+/* Input */
+.am-input {
+  font-family: var(--font-body);
+  font-size: var(--size-body);
+  background: var(--input-bg);
+  color: var(--input-text);
+  border: var(--border-width) solid var(--input-border);
+  border-radius: var(--radius-none);
+  padding: 16px 18px;
+  width: 100%;
+  outline: none;
+}
+.am-input::placeholder { color: var(--input-placeholder); }
+.am-input:focus { box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus-ring) 40%, transparent); }
+
+/* Badge */
+.am-badge {
+  font-family: var(--font-body);
+  font-weight: var(--weight-bold);
+  font-size: var(--size-body-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  border: 1px solid var(--badge-border);
+  border-radius: var(--radius-sm);
+}
+
+/* Email capture */
+.capture { max-width: 480px; }
+.capture__label {
+  font-weight: 700;
+  font-size: var(--size-body-sm);
+  margin-bottom: var(--space-2);
+  display: block;
+}
+.capture__row { display: flex; gap: var(--space-2); }
+.capture__row .am-input { flex: 1; }
+.capture .fineprint { margin-top: var(--space-2); max-width: 42ch; }
+
+/* Image placeholder */
+.img-slot {
+  display: block;
+  width: 100%;
+  background: var(--green-50);
+  border: var(--border-width) solid var(--color-ink);
+  position: relative;
+  overflow: hidden;
+}
+.img-slot img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Stat grid */
+.stats {
+  display: grid;
+  gap: 1.5px;
+  background: rgba(255,255,255,0.18);
+  border: 1.5px solid rgba(255,255,255,0.18);
+}
+.stat { background: var(--color-bg-inverse); padding: var(--space-5); }
+.stat__big {
+  font-family: var(--font-display);
+  font-weight: var(--weight-black);
+  font-variation-settings: "wdth" var(--display-wdth);
+  font-size: 30px;
+  color: var(--white);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.stat__small {
+  font-size: var(--size-body-sm);
+  color: rgba(255,255,255,0.72);
+  margin-top: var(--space-2);
+  line-height: 1.35;
+}
+/* Light variant (white cells, dark borders) */
+.stats--light { background: var(--color-ink); border-color: var(--color-ink); }
+.stats--light .stat { background: var(--color-bg-canvas); }
+.stats--light .stat__big { color: var(--color-ink); }
+.stats--light .stat__small { color: var(--color-ink-subtle); }
+
+/* ─── SECTION SCAFFOLD ───────────────────────────────────────────────────── */
+.section {
+  padding-top: var(--space-9);
+  padding-bottom: var(--space-9);
+}
+
+/* ─── NAV ────────────────────────────────────────────────────────────────── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--color-bg-canvas);
+  border-bottom: 0;
+}
+.nav__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding: var(--space-3) var(--space-6);
+}
+.logo { text-decoration: none; display: block; }
+.logo img { height: 22px; width: auto; }
+.nav__tag {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-variation-settings: "wdth" var(--display-wdth);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  font-size: 12px;
+  color: var(--color-ink-muted);
+}
+
+/* Language picker */
+.lang { position: relative; }
+.lang__current {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-weight: var(--weight-bold);
+  font-size: var(--size-body-sm);
+  letter-spacing: 0.04em;
+  color: var(--color-ink);
+  background: none;
+  border: 0;
+  padding: 6px 4px;
+  cursor: pointer;
+  line-height: 1;
+}
+.lang__chev { width: 9px; height: 9px; transition: transform var(--dur) var(--ease); }
+.lang.is-open .lang__chev { transform: rotate(180deg); }
+.lang__menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 60;
+  display: none;
+  flex-direction: column;
+  min-width: 66px;
+  background: var(--color-bg-canvas);
+  border: 1.5px solid var(--color-ink);
+}
+.lang.is-open .lang__menu { display: flex; }
+.lang__opt {
+  font-family: var(--font-body);
+  font-weight: var(--weight-bold);
+  font-size: var(--size-body-sm);
+  letter-spacing: 0.04em;
+  text-align: left;
+  color: var(--color-ink-subtle);
+  background: none;
+  border: 0;
+  padding: 10px 14px;
+  cursor: pointer;
+  line-height: 1;
+  transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+.lang__opt:hover { color: var(--color-ink); background: var(--color-bg-subtle); }
+
+/* ─── HERO ───────────────────────────────────────────────────────────────── */
+.hero { padding-top: var(--space-8); padding-bottom: var(--space-5); }
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: var(--space-7);
+  align-items: center;
+}
+.hero__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 17px;
+}
+.hero__copy .display { max-width: 14ch; }
+.hero .img-slot { aspect-ratio: 1 / 1; }
+
+/* ─── MODERN KITCHENS ────────────────────────────────────────────────────── */
+.modern {
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-9);
+}
+.modern__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  gap: var(--space-7);
+  align-items: center;
+}
+.modern__tin { position: relative; }
+.modern .img-slot { aspect-ratio: 5 / 8; }
+
+.pricetag {
+  position: absolute;
+  top: 18%;
+  right: -10px;
+  z-index: 2;
+  background: var(--color-ink);
+  color: var(--white);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+}
+.pricetag__cur {
+  font-family: var(--font-body);
+  font-weight: var(--weight-medium);
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  opacity: 0.9;
+}
+.pricetag__amt {
+  font-family: var(--font-display);
+  font-weight: var(--weight-black);
+  font-variation-settings: "wdth" var(--display-wdth);
+  font-size: 40px;
+  letter-spacing: -0.01em;
+  margin: 4px 0 6px;
+}
+.pricetag__size {
+  font-family: var(--font-body);
+  font-weight: var(--weight-medium);
+  font-size: 17px;
+  white-space: nowrap;
+}
+
+.modern__block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+.modern__icon { height: 92px; display: flex; align-items: flex-end; }
+.modern__icon img { height: 100%; width: auto; }
+.modern__block .lead { max-width: 38ch; }
+.modern__block .display { font-size: 24px; }
+
+/* ─── SHOWCASE (full-bleed) ──────────────────────────────────────────────── */
+.showcase .img-slot {
+  aspect-ratio: 21 / 9;
+  border-left: 0;
+  border-right: 0;
+}
+
+/* ─── WHAT'S INSIDE ──────────────────────────────────────────────────────── */
+.inside__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+.inside__col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+.inside__col .lead { max-width: 46ch; }
+.inside__col .lead + .lead { margin-top: calc(var(--space-3) * -1); }
+
+.textlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-family: var(--font-body);
+  font-weight: var(--weight-bold);
+  font-size: var(--size-body);
+  color: var(--color-ink);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1.5px;
+  margin-top: var(--space-2);
+}
+.textlink span { text-decoration: underline; }
+.textlink svg { width: 18px; height: 18px; flex: 0 0 auto; }
+.textlink:hover { color: var(--color-accent-strong); }
+
+.stats--row {
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: var(--space-8);
+}
+.stats--row .stat__big { font-size: 22px; }
+
+/* ─── GALLERY / CAROUSEL ─────────────────────────────────────────────────── */
+.gallery__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+.gallery__nav { display: none; gap: var(--space-2); flex: 0 0 auto; }
+.carousel-btn {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-canvas);
+  border: 1.5px solid var(--color-ink);
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+.carousel-btn:hover { background: var(--color-ink); color: var(--white); }
+.carousel-btn svg { width: 18px; height: 18px; }
+
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); }
+
+.usecase { display: flex; flex-direction: column; gap: var(--space-3); }
+.usecase .img-slot { aspect-ratio: 4 / 5; }
+.usecase__time {
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--color-ink-subtle);
+  text-transform: uppercase;
+}
+.usecase__t {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-variation-settings: "wdth" var(--display-wdth);
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+}
+
+/* ─── ORIGIN ─────────────────────────────────────────────────────────────── */
+.origin__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-7);
+  align-items: center;
+}
+.origin .img-slot { aspect-ratio: 1 / 1; }
+.origin__copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+.origin__copy .lead { max-width: 46ch; }
+
+/* ─── CLOSE / CTA ────────────────────────────────────────────────────────── */
+.close__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+}
+.close .capture { margin: 0 auto; }
+.close .capture__row { justify-content: center; }
+
+/* ─── FOOTER ─────────────────────────────────────────────────────────────── */
+.footer { border-top: 1.5px solid var(--color-ink); padding: var(--space-6); }
+.footer__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+.footer .fineprint { font-size: 12px; }
+
+/* ─── INFO DIALOG ────────────────────────────────────────────────────────── */
+.dlg-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+  background: rgba(14,39,22,0.55);
+}
+.dlg-backdrop.is-open { display: flex; }
+.dlg {
+  background: var(--color-bg-canvas);
+  border: 1.5px solid var(--color-ink);
+  max-width: 460px;
+  width: 100%;
+  padding: var(--space-7);
+  position: relative;
+}
+.dlg__close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--color-ink);
+}
+.dlg__close svg { width: 18px; height: 18px; }
+.dlg__list {
+  list-style: none;
+  padding: 0;
+  margin-top: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.dlg__item { display: flex; gap: var(--space-3); }
+.dlg__item .mk {
+  font-family: var(--font-display);
+  font-weight: 900;
+  color: var(--color-accent-strong);
+  flex-shrink: 0;
+}
+.dlg__term { font-weight: 700; font-size: var(--size-body); }
+.dlg__desc { font-size: var(--size-body-sm); color: var(--color-ink-subtle); line-height: 1.45; margin-top: 2px; }
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  :root {
+    --size-display-2xl: 44px;
+    --size-display-xl:  38px;
+    --size-display-lg:  30px;
+    --size-display-md:  24px;
+  }
+
+  .container { padding-left: var(--space-5); padding-right: var(--space-5); }
+  .section { padding-top: var(--space-7); padding-bottom: var(--space-7); }
+  .hero { padding-top: var(--space-7); padding-bottom: var(--space-4); }
+  .modern { padding-top: var(--space-3); padding-bottom: var(--space-7); }
+
+  .nav__tag { display: none; }
+  .nav__inner { padding-left: var(--space-5); padding-right: var(--space-5); }
+
+  #hero-headline { font-size: 32px !important; }
+  .hero__grid, .origin__grid { grid-template-columns: 1fr; }
+
+  .modern__grid { grid-template-columns: 1fr; gap: var(--space-6); }
+  .modern .img-slot { aspect-ratio: 4 / 5; max-width: 320px; }
+
+  .showcase .img-slot { aspect-ratio: 4 / 3; }
+
+  .inside__grid { grid-template-columns: 1fr !important; gap: var(--space-7) !important; }
+
+  .stats--row {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .stats--row .stat:last-child { grid-column: 1 / -1; }
+
+  .capture__row { flex-direction: column; }
+  .capture__row .am-btn { width: 100%; }
+
+  .gallery__nav { display: flex; }
+  .gallery__track {
+    display: flex;
+    gap: var(--space-4);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin: 0 calc(var(--space-5) * -1);
+    padding: 0 var(--space-5);
+  }
+  .gallery__track::-webkit-scrollbar { display: none; }
+  .gallery__track .usecase { flex: 0 0 80%; scroll-snap-align: start; }
+
+  .grid-3 { grid-template-columns: 1fr; }
+
+  .lang__opt { padding: 12px 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ① NAV ──────────────────────────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="#" class="logo">
+      <img src="project/amarea-logo.svg" alt="Amarea" />
+    </a>
+    <span class="nav__tag">Olio Extra Vergine di Oliva</span>
+    <div class="lang" role="group" aria-label="Language">
+      <button class="lang__current" type="button" aria-haspopup="listbox" aria-expanded="false">
+        <span class="lang__active">EN</span>
+        <svg class="lang__chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 4.5 6 7.5 9 4.5"/>
+        </svg>
+      </button>
+      <div class="lang__menu" role="listbox">
+        <button class="lang__opt" type="button">DE</button>
+        <button class="lang__opt" type="button">IT</button>
+        <button class="lang__opt" type="button">FR</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ② HERO ─────────────────────────────────────────────────────────────── -->
+<header class="hero">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <h1 class="display d-2xl" id="hero-headline" style="font-size: 41px">ONE INGREDIENT CHEFS NEVER SKIP: OLIVE OIL</h1>
+      <span class="am-badge" id="hero-badge" style="font-size: 16px; padding: 4px 14px; border-width: 0px">This year's olive oil is sold out.</span>
+      <p class="lead">The next order will be possible in October. Join the waiting list and we'll let you know first when it will be available.</p>
+      <div class="capture">
+        <label class="capture__label" for="hero-email">Your email</label>
+        <div class="capture__row">
+          <input class="am-input" id="hero-email" type="email" placeholder="name@email.com" />
+          <button class="am-btn">Join the waiting list</button>
+        </div>
+        <p class="fineprint">We'll only write when the new olive oil is ready. No commitment. No newsletters. No spam.</p>
+      </div>
+    </div>
+    <div class="img-slot" style="aspect-ratio: 1/1;" aria-label="Hero image — the tin, straight-on, against city-apartment light"></div>
+  </div>
+</header>
+
+<!-- ③ MADE FOR MODERN KITCHENS ──────────────────────────────────────────── -->
+<section class="modern section">
+  <div class="container modern__grid">
+    <div class="modern__tin">
+      <div class="img-slot" style="aspect-ratio: 5/8;" aria-label="The tin — straight-on product shot"></div>
+      <div class="pricetag">
+        <span class="pricetag__cur">CHF</span>
+        <span class="pricetag__amt">8.50</span>
+        <span class="pricetag__size">500 ml</span>
+      </div>
+    </div>
+    <div class="modern__block">
+      <div class="modern__icon">
+        <img src="project/icon-good-design.svg" alt="" />
+      </div>
+      <h2 class="display d-md" style="font-size: 24px">Made for Modern Kitchens.</h2>
+      <p class="lead">A lot of olive oil brands still look like they belong in your grandparents' pantry. We made something you'd actually want to leave out on the counter.</p>
+    </div>
+    <div class="modern__block">
+      <div class="modern__icon">
+        <img src="project/icon-glass-vs-aluminium.svg" alt="" />
+      </div>
+      <h2 class="display d-md" style="font-size: 24px">No Broken Glass. No Oily Mess.</h2>
+      <p class="lead">Glass bottles break. Counters get oily. We designed our tin to be easier to handle, harder to damage, and much easier to pour exactly where you want it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ④ FULL-BLEED SHOWCASE ───────────────────────────────────────────────── -->
+<section class="showcase">
+  <div class="img-slot" style="aspect-ratio: 21/9;" aria-label="Full-bleed — tin in-hand against concrete, hard side light"></div>
+</section>
+
+<!-- ⑤ WHAT'S ACTUALLY INSIDE ───────────────────────────────────────────── -->
+<section class="inside section">
+  <div class="container">
+    <div class="inside__grid">
+
+      <div class="inside__col">
+        <p class="eyebrow">THE HEALTHY SIDE OF OLIVES</p>
+        <h2 class="display d-md" style="font-size: 24px">Does extra virgin matter?</h2>
+        <p class="lead" style="font-size: 18px">We press olives cold. That's what "extra virgin" means. Because if you heat olives, you cook the personality out of them. And we like personality.</p>
+        <p class="lead" style="font-size: 18px">Cold pressing keeps all the good things olives develop under the Mediterranean sun. The natural antioxidants. The flavor. The character.</p>
+        <button class="textlink" type="button" id="healthy-detail">
+          <span>The healthy side in detail</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9.25"/>
+            <path d="M12 11v5"/>
+            <path d="M12 8h.01"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="inside__col">
+        <p class="eyebrow">THE TASTE</p>
+        <h2 class="display d-md" style="font-size: 24px">Gently bitter, slightly spicy</h2>
+        <p class="lead" style="font-size: 18px">Amarea is single origin. Early harvest. Cold-pressed. Milled shortly after picking.</p>
+        <p class="lead" style="font-size: 18px">On the palate? Gently bitter. Slightly spicy. Balanced. You'll notice a delicate olive aroma with hints of fresh grass and tomato leaves. And that little peppery kick at the end? That's not a flaw. That's character.</p>
+      </div>
+
+    </div>
+
+    <div class="stats stats--row stats--light">
+      <div class="stat">
+        <div class="stat__big" style="font-size: 24px">COLD-PRESSED</div>
+        <div class="stat__small" style="font-size: 15px">cold-extracted EVOO</div>
+      </div>
+      <div class="stat">
+        <div class="stat__big" style="font-size: 24px">&lt;0.3%</div>
+        <div class="stat__small" style="font-size: 15px">free acidity</div>
+      </div>
+      <div class="stat">
+        <div class="stat__big" style="font-size: 24px">Early harvest</div>
+        <div class="stat__small" style="font-size: 15px">milled shortly after picking, single origin</div>
+      </div>
+      <div class="stat">
+        <div class="stat__big" style="font-size: 24px">0</div>
+        <div class="stat__small" style="font-size: 15px">additives, ever</div>
+      </div>
+      <div class="stat">
+        <div class="stat__big" style="font-size: 24px">Taste</div>
+        <div class="stat__small" style="font-size: 15px">like olive oil should</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ USE-CASE GALLERY ──────────────────────────────────────────────────── -->
+<section class="section am-stripes">
+  <div class="container">
+    <div class="gallery__head">
+      <p class="eyebrow">Built for the everyday</p>
+      <div class="gallery__nav">
+        <button class="carousel-btn" type="button" data-gallery-prev aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 5 8 12l7 7"/>
+          </svg>
+        </button>
+        <button class="carousel-btn" type="button" data-gallery-next aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="grid-3 gallery__track" id="a2-gallery">
+      <figure class="usecase">
+        <div class="img-slot" style="aspect-ratio: 4/5;" aria-label="Weeknight pasta, zero ceremony"></div>
+        <span class="usecase__time">Monday · 21:14</span>
+        <span class="usecase__t">Weeknight pasta, zero ceremony</span>
+      </figure>
+      <figure class="usecase">
+        <div class="img-slot" style="aspect-ratio: 4/5;" aria-label="Brunch with the people you like"></div>
+        <span class="usecase__time">Sunday · 10:30</span>
+        <span class="usecase__t">Brunch with the people you like</span>
+      </figure>
+      <figure class="usecase">
+        <div class="img-slot" style="aspect-ratio: 4/5;" aria-label="A finishing drizzle, no occasion needed"></div>
+        <span class="usecase__time">Anytime</span>
+        <span class="usecase__t">A finishing drizzle, no occasion needed</span>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ⑦ ORIGIN ────────────────────────────────────────────────────────────── -->
+<section class="origin section am-stripes">
+  <div class="container origin__grid">
+    <div class="img-slot" style="aspect-ratio: 1/1;" aria-label="Origin — southern Italian grove, strong sun / the family table"></div>
+    <div class="origin__copy">
+      <p class="eyebrow">Made in southern Italy</p>
+      <h2 class="display d-md">Good olives. Good weather. Good oil.</h2>
+      <p class="lead">We are passionate foodies living in Lucerne, but with roots in southern Italy. Where the sun is strong. Where people speak louder. Where flavor is not negotiable.</p>
+      <p class="lead">Down there, people take their time with the things that matter. Cooking. Eating. Talking. Staying at the table longer than planned.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ⑧ CLOSING CTA ───────────────────────────────────────────────────────── -->
+<section class="close section am-stripes">
+  <div class="container close__inner">
+    <p class="eyebrow">LIMITED EDITION</p>
+    <h2 class="display d-xl">RESERVE YOUR TIN</h2>
+    <p class="lead" style="text-align: center">We're bottling the first batch this autumn. Reserve your tin before your favourite shelf spot is taken.</p>
+    <div class="capture">
+      <div class="capture__row">
+        <input class="am-input" type="email" placeholder="name@email.com" />
+        <button class="am-btn">Join the waiting list</button>
+      </div>
+      <p class="fineprint" style="text-align: center; margin-left: auto; margin-right: auto;">We'll only write when the new olive oil is ready. No commitment. No newsletters. No spam.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER ──────────────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer__inner">
+    <a href="#" class="logo">
+      <img src="project/amarea-logo.svg" alt="Amarea" style="height: 20px;" />
+    </a>
+    <span class="fineprint">Olio Extra Vergine di Oliva · Zürich · © 2026</span>
+  </div>
+</footer>
+
+<!-- INFO DIALOG ─────────────────────────────────────────────────────────── -->
+<div class="dlg-backdrop" id="healthy-dialog" role="dialog" aria-modal="true" aria-labelledby="healthy-dialog-title">
+  <div class="dlg">
+    <button class="dlg__close" type="button" aria-label="Close" data-dlg-close>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 6l12 12M18 6 6 18"/>
+      </svg>
+    </button>
+    <p class="eyebrow">EXTRA VIRGIN MATTERS</p>
+    <h3 class="display d-sm" id="healthy-dialog-title" style="margin-top: 8px;">THE HEALTHY SIDE IN DETAIL</h3>
+    <ul class="dlg__list">
+      <li class="dlg__item">
+        <span class="mk">01</span>
+        <div>
+          <div class="dlg__term" style="font-size: 18px">High in polyphenols</div>
+          <div class="dlg__desc" style="font-size: 15px">Natural antioxidants from early-harvest olives — preserved because we never apply heat.</div>
+        </div>
+      </li>
+      <li class="dlg__item">
+        <span class="mk">02</span>
+        <div>
+          <div class="dlg__term" style="font-size: 18px">Rich in monounsaturated fats</div>
+          <div class="dlg__desc" style="font-size: 15px">The "good" fats associated with heart health and a balanced Mediterranean diet.</div>
+        </div>
+      </li>
+      <li class="dlg__item">
+        <span class="mk">03</span>
+        <div>
+          <div class="dlg__term" style="font-size: 18px">Anti-inflammatory compounds</div>
+          <div class="dlg__desc" style="font-size: 15px">Naturally occurring oleocanthal — the source of that peppery kick at the back of the throat.</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+// Language picker
+(function () {
+  document.querySelectorAll('.lang').forEach(function (lang) {
+    var btn = lang.querySelector('.lang__current');
+    var active = lang.querySelector('.lang__active');
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = lang.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    lang.querySelectorAll('.lang__opt').forEach(function (opt) {
+      opt.addEventListener('click', function () {
+        var picked = opt.textContent;
+        opt.textContent = active.textContent;
+        active.textContent = picked;
+        lang.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  });
+  document.addEventListener('click', function () {
+    document.querySelectorAll('.lang.is-open').forEach(function (l) {
+      l.classList.remove('is-open');
+      var c = l.querySelector('.lang__current');
+      if (c) c.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+
+// Info dialog
+(function () {
+  var dlg = document.getElementById('healthy-dialog');
+  var openBtn = document.getElementById('healthy-detail');
+  if (!dlg || !openBtn) return;
+  function open() { dlg.classList.add('is-open'); document.body.style.overflow = 'hidden'; }
+  function close() { dlg.classList.remove('is-open'); document.body.style.overflow = ''; }
+  openBtn.addEventListener('click', open);
+  dlg.addEventListener('click', function (e) {
+    if (e.target === dlg || e.target.closest('[data-dlg-close]')) close();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+})();
+
+// Gallery carousel (mobile only)
+(function () {
+  var track = document.getElementById('a2-gallery');
+  if (!track) return;
+  var prev = document.querySelector('[data-gallery-prev]');
+  var next = document.querySelector('[data-gallery-next]');
+  function step(dir) {
+    var card = track.querySelector('.usecase');
+    var amount = card ? card.getBoundingClientRect().width + 16 : track.clientWidth * 0.8;
+    track.scrollBy({ left: dir * amount, behavior: 'smooth' });
+  }
+  if (prev) prev.addEventListener('click', function () { step(-1); });
+  if (next) next.addEventListener('click', function () { step(1); });
+})();
+</script>
+</body>
+</html>
