@@ -3,7 +3,7 @@
     "tagline": "Olio Extra Vergine di Oliva"
   },
   "hero": {
-    "title": "ONE INGREDIENT CHEFS NEVER SKIP: OLIVE OIL",
+    "title": "Life's too short for bad olive oil",
     "badge": "This year's olive oil is sold out.",
     "lead": "Everyone deserves good olive oil. Such a basic ingredient should belong to every (ordinary) modern kicthen. We use it for cooking but also raw to finish dishes.",
     "emailLabel": "Your email",
@@ -50,7 +50,7 @@
     },
     "stats": {
       "coldPressed": { "big": "COLD-PRESSED", "small": "cold-extracted EVOO" },
-      "acidity":     { "big": "<0.3%",        "small": "free acidity" },
+      "acidity":     { "big": "<0.3%",        "small": "acidity. It means the olives were picked, pressed, and bottled while they were still at their best. The result is fresher flavour, more of the good stuff, and olive oil that's well above the standard for extra virgin (required limit: 0.8%)." },
       "harvest":     { "big": "Early harvest", "small": "milled shortly after picking, single origin" },
       "additives":   { "big": "0",             "small": "additives, ever" },
       "taste":       { "big": "Taste",         "small": "like olive oil should" }
