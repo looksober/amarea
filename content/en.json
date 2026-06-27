@@ -9,7 +9,9 @@
     "emailLabel": "Your email",
     "emailPlaceholder": "name@email.com",
     "cta": "Join the waiting list",
-    "finePrint": "We'll only write when the new olive oil is ready. No commitment. No newsletters. No spam."
+    "finePrint": "We'll only write when the new olive oil is ready. No commitment. No newsletters. No spam.",
+    "image": "assets/images/hero/hero.webp",
+    "imageAlt": "The Amarea olive oil tin on a kitchen counter"
   },
   "modern": {
     "price": {
@@ -24,7 +26,13 @@
     "packaging": {
       "title": "No Broken Glass. No Oily Mess.",
       "lead": "Glass bottles break. Counters get oily. We designed our tin to be easier to handle, harder to damage, and much easier to pour exactly where you want it."
-    }
+    },
+    "image": "assets/images/products/tin.webp",
+    "imageAlt": "Amarea tin — straight-on product shot"
+  },
+  "showcase": {
+    "image": "assets/images/hero/showcase.webp",
+    "imageAlt": "Amarea tin held in hand against concrete wall with hard side light"
   },
   "inside": {
     "health": {
@@ -51,16 +59,33 @@
   "gallery": {
     "eyebrow": "Built for the everyday",
     "items": [
-      { "time": "Monday · 21:14",  "title": "Weeknight pasta, zero ceremony" },
-      { "time": "Sunday · 10:30",  "title": "Brunch with the people you like" },
-      { "time": "Anytime",         "title": "A finishing drizzle, no occasion needed" }
+      {
+        "time": "Monday · 21:14",
+        "title": "Weeknight pasta, zero ceremony",
+        "image": "assets/images/hero/gallery-pasta.webp",
+        "imageAlt": "Weeknight pasta finished with a drizzle of Amarea olive oil"
+      },
+      {
+        "time": "Sunday · 10:30",
+        "title": "Brunch with the people you like",
+        "image": "assets/images/hero/gallery-brunch.webp",
+        "imageAlt": "Sunday brunch spread with bread, eggs, and Amarea olive oil"
+      },
+      {
+        "time": "Anytime",
+        "title": "A finishing drizzle, no occasion needed",
+        "image": "assets/images/hero/gallery-drizzle.webp",
+        "imageAlt": "A finishing drizzle of Amarea olive oil over a dish"
+      }
     ]
   },
   "origin": {
     "eyebrow": "Made in southern Italy",
     "title": "Good olives. Good weather. Good oil.",
     "lead1": "We are passionate foodies living in Lucerne, but with roots in southern Italy. Where the sun is strong. Where people speak louder. Where flavor is not negotiable.",
-    "lead2": "Down there, people take their time with the things that matter. Cooking. Eating. Talking. Staying at the table longer than planned."
+    "lead2": "Down there, people take their time with the things that matter. Cooking. Eating. Talking. Staying at the table longer than planned.",
+    "image": "assets/images/hero/origin.webp",
+    "imageAlt": "Southern Italian olive grove under strong summer sun"
   },
   "close": {
     "eyebrow": "LIMITED EDITION",

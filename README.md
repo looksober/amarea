@@ -1,25 +1,71 @@
-# CODING AGENTS: READ THIS FIRST
+# Amarea
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+Landing page for Amarea extra virgin olive oil, hosted on GitHub Pages.
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+## How to update content
 
-## What you should do — IMPORTANT
+### Edit text
 
-**Read the chat transcripts first.** There are 1 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+Open `content/en.json` and change any value. Keys map directly to the page:
 
-**Read `project/Amarea - Concept A2.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+| Key | Where it appears |
+|-----|-----------------|
+| `hero.title` | Main headline |
+| `hero.lead` | Paragraph below the headline |
+| `hero.badge` | "Sold out" badge |
+| `modern.design.title` | "Made for Modern Kitchens" heading |
+| `origin.lead1` / `origin.lead2` | Origin section paragraphs |
+| `close.lead` | Final CTA paragraph |
+| … | All other keys follow the same pattern |
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+Save the file, commit, and push. Changes go live in ~2 minutes.
 
-## About the design files
+### Replace an image
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+1. Drop the new file into the right folder:
+   - **Hero / lifestyle shots** → `assets/images/hero/`
+   - **Product photos** → `assets/images/products/`
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+2. Open `content/en.json` and update the `"image"` value for that slot to match the new filename.  
+   Example — to swap the hero photo:
+   ```json
+   "hero": {
+     "image": "assets/images/hero/hero-new.webp",
+     "imageAlt": "Updated alt text describing the image"
+   }
+   ```
 
-## Bundle contents
+3. Always update `"imageAlt"` to describe what's in the new image (accessibility + SEO).
 
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `Amarea` project files (HTML prototypes, assets, components)
+4. Commit both the image file and the updated `en.json`, then push.
+
+### Recommended image specs
+
+| Slot | Folder | Max dimensions | Max file size | Format |
+|------|--------|---------------|---------------|--------|
+| Hero (1:1) | `hero/` | 1200 × 1200 px | 300 KB | WebP |
+| Showcase (wide) | `hero/` | 1920 × 823 px | 300 KB | WebP |
+| Gallery cards (4:5) | `hero/` | 800 × 1000 px | 150 KB | WebP |
+| Origin (1:1) | `hero/` | 1200 × 1200 px | 200 KB | WebP |
+| Product tin (5:8) | `products/` | 800 × 1280 px | 150 KB | WebP |
+
+Convert to WebP with [Squoosh](https://squoosh.app) (free, browser-based).
+
+### Deploy
+
+Every push to `main` triggers GitHub Pages. Wait ~2 minutes, then reload the live site.
+
+---
+
+## Project structure
+
+```
+index.html          — page markup (data-i18n / data-i18n-src / data-i18n-alt attributes)
+css/styles.css      — all styles
+js/main.js          — interactions + loadContent() i18n loader
+content/en.json     — all text and image paths
+assets/images/
+  hero/             — lifestyle and hero photos (.webp)
+  products/         — product shots (.webp)
+project/            — original Claude Design export (reference only)
+```

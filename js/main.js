@@ -22,6 +22,14 @@ function loadContent(lang) {
           el.textContent = value;
         }
       });
+      document.querySelectorAll('[data-i18n-src]').forEach(function (el) {
+        var value = resolve(data, el.getAttribute('data-i18n-src'));
+        if (value != null) el.src = value;
+      });
+      document.querySelectorAll('[data-i18n-alt]').forEach(function (el) {
+        var value = resolve(data, el.getAttribute('data-i18n-alt'));
+        if (value != null) el.alt = value;
+      });
     });
 }
 
