@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "tagline": "Olio Extra Vergine di Oliva"
+  },
+  "hero": {
+    "title": "ONE INGREDIENT CHEFS NEVER SKIP: OLIVE OIL",
+    "badge": "This year's olive oil is sold out.",
+    "lead": "The next order will be possible in October. Join the waiting list and we'll let you know first when it will be available.",
+    "emailLabel": "Your email",
+    "emailPlaceholder": "name@email.com",
+    "cta": "Join the waiting list",
+    "finePrint": "We'll only write when the new olive oil is ready. No commitment. No newsletters. No spam."
+  },
+  "modern": {
+    "price": {
+      "currency": "CHF",
+      "amount": "8.50",
+      "size": "500 ml"
+    },
+    "design": {
+      "title": "Made for Modern Kitchens.",
+      "lead": "A lot of olive oil brands still look like they belong in your grandparents' pantry. We made something you'd actually want to leave out on the counter."
+    },
+    "packaging": {
+      "title": "No Broken Glass. No Oily Mess.",
+      "lead": "Glass bottles break. Counters get oily. We designed our tin to be easier to handle, harder to damage, and much easier to pour exactly where you want it."
+    }
+  },
+  "inside": {
+    "health": {
+      "eyebrow": "THE HEALTHY SIDE OF OLIVES",
+      "title": "Does extra virgin matter?",
+      "lead1": "We press olives cold. That's what \"extra virgin\" means. Because if you heat olives, you cook the personality out of them. And we like personality.",
+      "lead2": "Cold pressing keeps all the good things olives develop under the Mediterranean sun. The natural antioxidants. The flavor. The character.",
+      "cta": "The healthy side in detail"
+    },
+    "taste": {
+      "eyebrow": "THE TASTE",
+      "title": "Gently bitter, slightly spicy",
+      "lead1": "Amarea is single origin. Early harvest. Cold-pressed. Milled shortly after picking.",
+      "lead2": "On the palate? Gently bitter. Slightly spicy. Balanced. You'll notice a delicate olive aroma with hints of fresh grass and tomato leaves. And that little peppery kick at the end? That's not a flaw. That's character."
+    },
+    "stats": {
+      "coldPressed": { "big": "COLD-PRESSED", "small": "cold-extracted EVOO" },
+      "acidity":     { "big": "<0.3%",        "small": "free acidity" },
+      "harvest":     { "big": "Early harvest", "small": "milled shortly after picking, single origin" },
+      "additives":   { "big": "0",             "small": "additives, ever" },
+      "taste":       { "big": "Taste",         "small": "like olive oil should" }
+    }
+  },
+  "gallery": {
+    "eyebrow": "Built for the everyday",
+    "items": [
+      { "time": "Monday · 21:14",  "title": "Weeknight pasta, zero ceremony" },
+      { "time": "Sunday · 10:30",  "title": "Brunch with the people you like" },
+      { "time": "Anytime",         "title": "A finishing drizzle, no occasion needed" }
+    ]
+  },
+  "origin": {
+    "eyebrow": "Made in southern Italy",
+    "title": "Good olives. Good weather. Good oil.",
+    "lead1": "We are passionate foodies living in Lucerne, but with roots in southern Italy. Where the sun is strong. Where people speak louder. Where flavor is not negotiable.",
+    "lead2": "Down there, people take their time with the things that matter. Cooking. Eating. Talking. Staying at the table longer than planned."
+  },
+  "close": {
+    "eyebrow": "LIMITED EDITION",
+    "title": "RESERVE YOUR TIN",
+    "lead": "We're bottling the first batch this autumn. Reserve your tin before your favourite shelf spot is taken.",
+    "emailPlaceholder": "name@email.com",
+    "cta": "Join the waiting list",
+    "finePrint": "We'll only write when the new olive oil is ready. No commitment. No newsletters. No spam."
+  },
+  "footer": {
+    "copy": "Olio Extra Vergine di Oliva · Zürich · © 2026"
+  },
+  "dialog": {
+    "eyebrow": "EXTRA VIRGIN MATTERS",
+    "title": "THE HEALTHY SIDE IN DETAIL",
+    "items": [
+      {
+        "term": "High in polyphenols",
+        "desc": "Natural antioxidants from early-harvest olives — preserved because we never apply heat."
+      },
+      {
+        "term": "Rich in monounsaturated fats",
+        "desc": "The \"good\" fats associated with heart health and a balanced Mediterranean diet."
+      },
+      {
+        "term": "Anti-inflammatory compounds",
+        "desc": "Naturally occurring oleocanthal — the source of that peppery kick at the back of the throat."
+      }
+    ]
+  }
+}
