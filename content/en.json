@@ -98,6 +98,11 @@
   "footer": {
     "copy": "Olio Extra Vergine di Oliva · Zürich · © 2026"
   },
+  "soldoutDialog": {
+    "eyebrow": "This year's olive oil is sold out",
+    "title": "Reserve your tin",
+    "lead": "The next order will be possible in October. Join the waiting list and we'll let you know first when it will be available."
+  },
   "dialog": {
     "eyebrow": "EXTRA VIRGIN MATTERS",
     "title": "THE HEALTHY SIDE IN DETAIL",

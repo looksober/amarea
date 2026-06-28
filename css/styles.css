@@ -221,6 +221,17 @@ h1, h2, h3, p, ul, figure { margin: 0; }
   border: 1px solid var(--badge-border);
   border-radius: var(--radius-sm);
 }
+.am-badge__info {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+.am-badge__info svg { width: 16px; height: 16px; }
 
 /* Email capture */
 .capture { max-width: 480px; }

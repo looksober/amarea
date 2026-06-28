@@ -78,6 +78,20 @@ loadContent();
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
 })();
 
+// Sold-out dialog
+(function () {
+  var dlg = document.getElementById('soldout-dialog');
+  var openBtn = document.getElementById('soldout-detail');
+  if (!dlg || !openBtn) return;
+  function open() { dlg.classList.add('is-open'); document.body.style.overflow = 'hidden'; }
+  function close() { dlg.classList.remove('is-open'); document.body.style.overflow = ''; }
+  openBtn.addEventListener('click', open);
+  dlg.addEventListener('click', function (e) {
+    if (e.target === dlg || e.target.closest('[data-dlg-close]')) close();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+})();
+
 // Gallery carousel (mobile only)
 (function () {
   var track = document.getElementById('a2-gallery');
