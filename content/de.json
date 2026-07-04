@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "tagline": "Olio Extra Vergine di Oliva"
+  },
+  "hero": {
+    "title": "Das Leben ist zu kurz für schlechtes Olivenöl",
+    "badge": "Das Olivenöl dieses Jahres ist ausverkauft.",
+    "lead": "Jeder verdient gutes Olivenöl. Ein so grundlegendes Zutate sollte in jede (gewöhnliche) moderne Küche gehören. Wir verwenden es zum Kochen, aber auch roh zum Verfeinern von Gerichten.",
+    "emailLabel": "Deine E-Mail",
+    "emailPlaceholder": "name@email.com",
+    "cta": "Auf die Warteliste",
+    "finePrint": "Wir schreiben nur, wenn das neue Olivenöl fertig ist. Keine Verpflichtung. Keine Newsletter. Kein Spam.",
+    "image": "assets/images/hero/hero.webp",
+    "imageAlt": "Die Amarea-Olivenöldose auf einer Küchentheke"
+  },
+  "modern": {
+    "price": {
+      "currency": "CHF",
+      "amount": "8.50",
+      "size": "500 ml"
+    },
+    "design": {
+      "title": "Gemacht für moderne Küchen.",
+      "lead": "Viele Olivenöl-Marken sehen noch aus, als gehörten sie in die Speisekammer deiner Großeltern. Wir haben etwas gemacht, das du wirklich auf der Küchentheke stehen lassen möchtest."
+    },
+    "packaging": {
+      "title": "Kein zerbrochenes Glas. Kein fettiger Schlamassel.",
+      "lead": "Glasflaschen zerbrechen. Arbeitsflächen werden ölig. Wir haben unsere Dose so gestaltet, dass sie leichter zu handhaben, schwerer zu beschädigen und viel einfacher zu gießen ist."
+    },
+    "image": "assets/images/products/tin.webp",
+    "imageAlt": "Amarea-Dose — gerader Produktschuss"
+  },
+  "showcase": {
+    "image": "assets/images/hero/showcase.webp",
+    "imageAlt": "Amarea-Dose in der Hand vor Betonwand mit hartem Seitenlicht"
+  },
+  "inside": {
+    "health": {
+      "eyebrow": "DIE GESUNDE SEITE DER OLIVEN",
+      "title": "Spielt Extra Vergine eine Rolle?",
+      "lead1": "Wir pressen Oliven kalt. Das bedeutet „extra vergine". Denn wenn man Oliven erhitzt, kocht man die Persönlichkeit heraus. Und wir mögen Persönlichkeit.",
+      "lead2": "Kaltpressung bewahrt all das Gute, was Oliven unter der Mittelmeersonne entwickeln. Die natürlichen Antioxidantien. Den Geschmack. Den Charakter.",
+      "cta": "Die gesunde Seite im Detail"
+    },
+    "taste": {
+      "eyebrow": "DER GESCHMACK",
+      "title": "Sanft bitter, leicht scharf",
+      "lead1": "Amarea ist single origin. Frühe Ernte. Kaltgepresst. Kurz nach der Ernte gemahlen.",
+      "lead2": "Am Gaumen? Sanft bitter. Leicht scharf. Ausgewogen. Du wirst ein zartes Olivenaroma mit Nuancen von frischem Gras und Tomatenblättern bemerken. Und dieser kleine pfeffrige Kick am Ende? Das ist kein Fehler. Das ist Charakter."
+    },
+    "stats": {
+      "coldPressed": { "big": "KALTGEPRESST", "small": "kaltextrahiertes EVOO" },
+      "acidity":     { "big": "<0,3%",         "small": "Säure. Das bedeutet, dass die Oliven gepflückt, gepresst und abgefüllt wurden, als sie noch auf dem Höhepunkt ihrer Qualität waren. Das Ergebnis ist ein frischerer Geschmack, mehr des Guten und ein Olivenöl weit über dem Extra-Vergine-Standard (Grenzwert: 0,8%)." },
+      "harvest":     { "big": "Frühe Ernte",   "small": "kurz nach der Ernte gemahlen, single origin" },
+      "additives":   { "big": "0",             "small": "Zusatzstoffe, jemals" },
+      "taste":       { "big": "Geschmack",     "small": "wie Olivenöl sein sollte" }
+    }
+  },
+  "gallery": {
+    "eyebrow": "Für den Alltag gemacht",
+    "items": [
+      {
+        "time": "Montag · 21:14",
+        "title": "Pasta unter der Woche, ganz entspannt",
+        "image": "assets/images/hero/gallery-pasta.webp",
+        "imageAlt": "Pasta unter der Woche mit einem Schuss Amarea-Olivenöl"
+      },
+      {
+        "time": "Sonntag · 10:30",
+        "title": "Brunch mit den Menschen, die du magst",
+        "image": "assets/images/hero/gallery-brunch.webp",
+        "imageAlt": "Sonntagsbrunch mit Brot, Eiern und Amarea-Olivenöl"
+      },
+      {
+        "time": "Jederzeit",
+        "title": "Ein letzter Schuss, kein Anlass nötig",
+        "image": "assets/images/hero/gallery-drizzle.webp",
+        "imageAlt": "Ein abschließender Schuss Amarea-Olivenöl über einem Gericht"
+      }
+    ]
+  },
+  "origin": {
+    "eyebrow": "Hergestellt in Süditalien",
+    "title": "Gute Oliven. Gutes Wetter. Gutes Öl.",
+    "lead1": "Wir sind leidenschaftliche Feinschmecker, die in Luzern leben, aber Wurzeln in Süditalien haben. Wo die Sonne stark ist. Wo die Menschen lauter sprechen. Wo Geschmack nicht verhandelbar ist.",
+    "lead2": "Dort unten nehmen sich die Menschen Zeit für die Dinge, die wichtig sind. Kochen. Essen. Reden. Länger am Tisch bleiben als geplant.",
+    "image": "assets/images/hero/origin.webp",
+    "imageAlt": "Süditalienischer Olivenhain unter starker Sommersonne"
+  },
+  "close": {
+    "eyebrow": "LIMITIERTE EDITION",
+    "title": "RESERVIERE DEINE DOSE",
+    "lead": "Wir füllen die erste Charge diesen Herbst ab. Reserviere deine Dose, bevor dein Lieblingsplatz im Regal vergeben ist.",
+    "emailPlaceholder": "name@email.com",
+    "cta": "Auf die Warteliste",
+    "finePrint": "Wir schreiben nur, wenn das neue Olivenöl fertig ist. Keine Verpflichtung. Keine Newsletter. Kein Spam."
+  },
+  "footer": {
+    "copy": "Olio Extra Vergine di Oliva · Zürich · © 2026"
+  },
+  "form": {
+    "emailPlaceholder": "Deine E-Mail-Adresse",
+    "submit": "Auf die Warteliste",
+    "consent": "Ich stimme zu, dass meine E-Mail-Adresse gespeichert wird, um mich über den Launch von amarea zu informieren. Siehe unsere Datenschutzrichtlinie.",
+    "success": "Danke! Wir melden uns, wenn amarea startet."
+  },
+  "soldoutDialog": {
+    "eyebrow": "Das Olivenöl dieses Jahres ist ausverkauft",
+    "title": "Reserviere deine Dose",
+    "lead": "Die nächste Bestellung wird im Oktober möglich sein. Trag dich auf die Warteliste ein und wir informieren dich als Erste, wenn sie verfügbar ist."
+  },
+  "dialog": {
+    "eyebrow": "EXTRA VERGINE ZÄHLT",
+    "title": "DIE GESUNDE SEITE IM DETAIL",
+    "items": [
+      {
+        "term": "Reich an Polyphenolen",
+        "desc": "Natürliche Antioxidantien aus früh geernteten Oliven — erhalten, weil wir nie Hitze anwenden."
+      },
+      {
+        "term": "Reich an einfach ungesättigten Fettsäuren",
+        "desc": "Die „guten" Fette, die mit Herzgesundheit und einer ausgewogenen mediterranen Ernährung assoziiert werden."
+      },
+      {
+        "term": "Entzündungshemmende Verbindungen",
+        "desc": "Natürlich vorkommendes Oleocanthal — die Quelle des pfeffrigen Kicks im Hals."
+      }
+    ]
+  }
+}

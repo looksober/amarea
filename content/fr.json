@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "tagline": "Olio Extra Vergine di Oliva"
+  },
+  "hero": {
+    "title": "La vie est trop courte pour une mauvaise huile d'olive",
+    "badge": "L'huile d'olive de cette année est épuisée.",
+    "lead": "Tout le monde mérite une bonne huile d'olive. Un ingrédient aussi basique devrait appartenir à chaque cuisine moderne (ordinaire). Nous l'utilisons pour cuisiner mais aussi crue pour finir les plats.",
+    "emailLabel": "Votre email",
+    "emailPlaceholder": "nom@email.com",
+    "cta": "Rejoindre la liste d'attente",
+    "finePrint": "Nous vous écrirons seulement quand la nouvelle huile d'olive sera prête. Sans engagement. Pas de newsletter. Pas de spam.",
+    "image": "assets/images/hero/hero.webp",
+    "imageAlt": "La boîte d'huile d'olive Amarea sur un plan de travail de cuisine"
+  },
+  "modern": {
+    "price": {
+      "currency": "CHF",
+      "amount": "8.50",
+      "size": "500 ml"
+    },
+    "design": {
+      "title": "Fait pour les cuisines modernes.",
+      "lead": "Beaucoup de marques d'huile d'olive ont encore l'air d'appartenir au garde-manger de vos grands-parents. Nous avons créé quelque chose que vous voudriez vraiment laisser sur le plan de travail."
+    },
+    "packaging": {
+      "title": "Pas de verre cassé. Pas de désordre huileux.",
+      "lead": "Les bouteilles en verre se cassent. Les plans de travail deviennent huileux. Nous avons conçu notre boîte pour être plus facile à manipuler, plus difficile à endommager et bien plus facile à verser exactement là où vous le souhaitez."
+    },
+    "image": "assets/images/products/tin.webp",
+    "imageAlt": "Boîte Amarea — photo frontale du produit"
+  },
+  "showcase": {
+    "image": "assets/images/hero/showcase.webp",
+    "imageAlt": "Boîte Amarea tenue en main devant un mur en béton avec une lumière latérale marquée"
+  },
+  "inside": {
+    "health": {
+      "eyebrow": "LE CÔTÉ SAIN DES OLIVES",
+      "title": "L'extra vierge, est-ce important ?",
+      "lead1": "Nous pressons les olives à froid. C'est ce que signifie \"extra vierge\". Parce que si vous chauffez les olives, vous en cuisez la personnalité. Et nous aimons la personnalité.",
+      "lead2": "La pression à froid préserve tout ce que les olives développent sous le soleil méditerranéen. Les antioxydants naturels. La saveur. Le caractère.",
+      "cta": "Le côté sain en détail"
+    },
+    "taste": {
+      "eyebrow": "LE GOÛT",
+      "title": "Doucement amer, légèrement épicé",
+      "lead1": "Amarea est single origin. Récolte précoce. Pressée à froid. Moulue peu après la cueillette.",
+      "lead2": "En bouche ? Doucement amer. Légèrement épicé. Équilibré. Vous remarquerez un délicat arôme d'olive avec des notes d'herbe fraîche et de feuilles de tomate. Et ce petit coup de poivre à la fin ? Ce n'est pas un défaut. C'est du caractère."
+    },
+    "stats": {
+      "coldPressed": { "big": "PRESSÉE À FROID", "small": "EVOO extrait à froid" },
+      "acidity":     { "big": "<0,3%",            "small": "acidité. Cela signifie que les olives ont été cueillies, pressées et mises en bouteille quand elles étaient encore à leur meilleur. Le résultat : une saveur plus fraîche, plus de bienfaits, et une huile bien au-dessus du standard extra vierge (limite requise : 0,8%)." },
+      "harvest":     { "big": "Récolte précoce",  "small": "moulue peu après la cueillette, single origin" },
+      "additives":   { "big": "0",                "small": "additifs, jamais" },
+      "taste":       { "big": "Goût",             "small": "comme une huile d'olive devrait l'être" }
+    }
+  },
+  "gallery": {
+    "eyebrow": "Fait pour le quotidien",
+    "items": [
+      {
+        "time": "Lundi · 21:14",
+        "title": "Pâtes en semaine, sans chichis",
+        "image": "assets/images/hero/gallery-pasta.webp",
+        "imageAlt": "Pâtes du soir finies avec un filet d'huile d'olive Amarea"
+      },
+      {
+        "time": "Dimanche · 10:30",
+        "title": "Brunch avec les gens que vous aimez",
+        "image": "assets/images/hero/gallery-brunch.webp",
+        "imageAlt": "Brunch dominical avec pain, œufs et huile d'olive Amarea"
+      },
+      {
+        "time": "À tout moment",
+        "title": "Un filet pour finir, sans occasion particulière",
+        "image": "assets/images/hero/gallery-drizzle.webp",
+        "imageAlt": "Un filet final d'huile d'olive Amarea sur un plat"
+      }
+    ]
+  },
+  "origin": {
+    "eyebrow": "Fabriqué dans le sud de l'Italie",
+    "title": "Bonnes olives. Bon temps. Bonne huile.",
+    "lead1": "Nous sommes des passionnés de gastronomie vivant à Lucerne, mais avec des racines dans le sud de l'Italie. Où le soleil est fort. Où les gens parlent plus fort. Où la saveur n'est pas négociable.",
+    "lead2": "Là-bas, les gens prennent leur temps pour les choses qui comptent. Cuisiner. Manger. Parler. Rester à table plus longtemps que prévu.",
+    "image": "assets/images/hero/origin.webp",
+    "imageAlt": "Oliveraie du sud de l'Italie sous un fort soleil d'été"
+  },
+  "close": {
+    "eyebrow": "ÉDITION LIMITÉE",
+    "title": "RÉSERVEZ VOTRE BOÎTE",
+    "lead": "Nous mettons en bouteille le premier lot cet automne. Réservez votre boîte avant que votre place préférée sur l'étagère ne soit prise.",
+    "emailPlaceholder": "nom@email.com",
+    "cta": "Rejoindre la liste d'attente",
+    "finePrint": "Nous vous écrirons seulement quand la nouvelle huile d'olive sera prête. Sans engagement. Pas de newsletter. Pas de spam."
+  },
+  "footer": {
+    "copy": "Olio Extra Vergine di Oliva · Zürich · © 2026"
+  },
+  "form": {
+    "emailPlaceholder": "Votre adresse email",
+    "submit": "Rejoindre la liste d'attente",
+    "consent": "J'accepte que mon adresse email soit conservée pour me notifier du lancement d'amarea. Voir notre politique de confidentialité.",
+    "success": "Merci ! Nous vous contacterons lors du lancement d'amarea."
+  },
+  "soldoutDialog": {
+    "eyebrow": "L'huile d'olive de cette année est épuisée",
+    "title": "Réservez votre boîte",
+    "lead": "La prochaine commande sera possible en octobre. Rejoignez la liste d'attente et nous vous informerons en premier lorsqu'elle sera disponible."
+  },
+  "dialog": {
+    "eyebrow": "L'EXTRA VIERGE, ÇA COMPTE",
+    "title": "LE CÔTÉ SAIN EN DÉTAIL",
+    "items": [
+      {
+        "term": "Riche en polyphénols",
+        "desc": "Antioxydants naturels provenant d'olives récoltées tôt — préservés car nous n'appliquons jamais de chaleur."
+      },
+      {
+        "term": "Riche en graisses monoinsaturées",
+        "desc": "Les \"bonnes\" graisses associées à la santé cardiaque et à un régime méditerranéen équilibré."
+      },
+      {
+        "term": "Composés anti-inflammatoires",
+        "desc": "L'oléocanthal naturel — la source de ce petit coup de poivre au fond de la gorge."
+      }
+    ]
+  }
+}

@@ -83,11 +83,12 @@ loadContent();
     });
     lang.querySelectorAll('.lang__opt').forEach(function (opt) {
       opt.addEventListener('click', function () {
-        var picked = opt.textContent;
+        var picked = opt.textContent.trim().toLowerCase();
         opt.textContent = active.textContent;
-        active.textContent = picked;
+        active.textContent = picked.toUpperCase();
         lang.classList.remove('is-open');
         btn.setAttribute('aria-expanded', 'false');
+        loadContent(picked);
       });
     });
   });

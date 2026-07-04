@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "tagline": "Olio Extra Vergine di Oliva"
+  },
+  "hero": {
+    "title": "La vita è troppo breve per un cattivo olio d'oliva",
+    "badge": "L'olio d'oliva di quest'anno è esaurito.",
+    "lead": "Tutti meritano un buon olio d'oliva. Un ingrediente così basilare dovrebbe appartenere a ogni cucina moderna (comune). Lo usiamo per cucinare ma anche a crudo per finire i piatti.",
+    "emailLabel": "La tua email",
+    "emailPlaceholder": "nome@email.com",
+    "cta": "Unisciti alla lista d'attesa",
+    "finePrint": "Scriveremo solo quando il nuovo olio d'oliva sarà pronto. Nessun impegno. Nessuna newsletter. Nessuno spam.",
+    "image": "assets/images/hero/hero.webp",
+    "imageAlt": "La latta di olio d'oliva Amarea su un bancone da cucina"
+  },
+  "modern": {
+    "price": {
+      "currency": "CHF",
+      "amount": "8.50",
+      "size": "500 ml"
+    },
+    "design": {
+      "title": "Fatto per le cucine moderne.",
+      "lead": "Molti marchi di olio d'oliva sembrano ancora appartenere alla dispensa dei tuoi nonni. Abbiamo creato qualcosa che vorresti davvero lasciare sul bancone."
+    },
+    "packaging": {
+      "title": "Nessun vetro rotto. Nessun disordine unto.",
+      "lead": "Le bottiglie di vetro si rompono. I banconi si ungono. Abbiamo progettato la nostra latta per essere più facile da maneggiare, più difficile da danneggiare e molto più semplice da versare esattamente dove vuoi."
+    },
+    "image": "assets/images/products/tin.webp",
+    "imageAlt": "Latta Amarea — foto frontale del prodotto"
+  },
+  "showcase": {
+    "image": "assets/images/hero/showcase.webp",
+    "imageAlt": "Latta Amarea tenuta in mano davanti a un muro di cemento con luce laterale intensa"
+  },
+  "inside": {
+    "health": {
+      "eyebrow": "IL LATO SANO DELLE OLIVE",
+      "title": "L'extra vergine fa la differenza?",
+      "lead1": "Premiamo le olive a freddo. Questo è il significato di \"extra vergine\". Perché se si riscaldano le olive, si cucina via la personalità. E a noi piace la personalità.",
+      "lead2": "La spremitura a freddo conserva tutto il meglio che le olive sviluppano sotto il sole mediterraneo. Gli antiossidanti naturali. Il sapore. Il carattere.",
+      "cta": "Il lato sano nel dettaglio"
+    },
+    "taste": {
+      "eyebrow": "IL SAPORE",
+      "title": "Delicatamente amaro, leggermente piccante",
+      "lead1": "Amarea è single origin. Raccolta precoce. Spremitura a freddo. Molitura poco dopo la raccolta.",
+      "lead2": "Al palato? Delicatamente amaro. Leggermente piccante. Equilibrato. Noterai un delicato aroma di oliva con sentori di erba fresca e foglie di pomodoro. E quel piccolo pizzico pepato alla fine? Non è un difetto. È carattere."
+    },
+    "stats": {
+      "coldPressed": { "big": "SPREMITURA A FREDDO", "small": "EVOO estratto a freddo" },
+      "acidity":     { "big": "<0,3%",               "small": "acidità. Significa che le olive sono state raccolte, pressate e imbottigliate quando erano ancora al loro meglio. Il risultato è un sapore più fresco, più sostanze benefiche e un olio ben al di sopra dello standard extra vergine (limite richiesto: 0,8%)." },
+      "harvest":     { "big": "Raccolta precoce",    "small": "molitura poco dopo la raccolta, single origin" },
+      "additives":   { "big": "0",                   "small": "additivi, mai" },
+      "taste":       { "big": "Sapore",              "small": "come dovrebbe essere l'olio d'oliva" }
+    }
+  },
+  "gallery": {
+    "eyebrow": "Fatto per l'uso quotidiano",
+    "items": [
+      {
+        "time": "Lunedì · 21:14",
+        "title": "Pasta infrasettimanale, zero cerimonie",
+        "image": "assets/images/hero/gallery-pasta.webp",
+        "imageAlt": "Pasta infrasettimanale finita con un filo di olio d'oliva Amarea"
+      },
+      {
+        "time": "Domenica · 10:30",
+        "title": "Brunch con le persone che ami",
+        "image": "assets/images/hero/gallery-brunch.webp",
+        "imageAlt": "Brunch domenicale con pane, uova e olio d'oliva Amarea"
+      },
+      {
+        "time": "In qualsiasi momento",
+        "title": "Un filo d'olio finale, nessuna occasione necessaria",
+        "image": "assets/images/hero/gallery-drizzle.webp",
+        "imageAlt": "Un filo finale di olio d'oliva Amarea su un piatto"
+      }
+    ]
+  },
+  "origin": {
+    "eyebrow": "Fatto nel sud Italia",
+    "title": "Buone olive. Buon tempo. Buon olio.",
+    "lead1": "Siamo appassionati di cucina che vivono a Lucerna, ma con radici nel sud Italia. Dove il sole è forte. Dove la gente parla più forte. Dove il sapore non è negoziabile.",
+    "lead2": "Laggiù, le persone si prendono il loro tempo per le cose che contano. Cucinare. Mangiare. Parlare. Stare a tavola più a lungo del previsto.",
+    "image": "assets/images/hero/origin.webp",
+    "imageAlt": "Uliveto del sud Italia sotto un forte sole estivo"
+  },
+  "close": {
+    "eyebrow": "EDIZIONE LIMITATA",
+    "title": "RISERVA LA TUA LATTA",
+    "lead": "Imbottiglieremo il primo lotto questo autunno. Riserva la tua latta prima che il tuo posto preferito sullo scaffale venga preso.",
+    "emailPlaceholder": "nome@email.com",
+    "cta": "Unisciti alla lista d'attesa",
+    "finePrint": "Scriveremo solo quando il nuovo olio d'oliva sarà pronto. Nessun impegno. Nessuna newsletter. Nessuno spam."
+  },
+  "footer": {
+    "copy": "Olio Extra Vergine di Oliva · Zürich · © 2026"
+  },
+  "form": {
+    "emailPlaceholder": "Il tuo indirizzo email",
+    "submit": "Unisciti alla lista d'attesa",
+    "consent": "Acconsento che il mio indirizzo email venga conservato per ricevere notifiche sul lancio di amarea. Vedi la nostra informativa sulla privacy.",
+    "success": "Grazie! Ti contatteremo quando amarea sarà disponibile."
+  },
+  "soldoutDialog": {
+    "eyebrow": "L'olio d'oliva di quest'anno è esaurito",
+    "title": "Riserva la tua latta",
+    "lead": "Il prossimo ordine sarà possibile ad ottobre. Unisciti alla lista d'attesa e ti faremo sapere per primi quando sarà disponibile."
+  },
+  "dialog": {
+    "eyebrow": "L'EXTRA VERGINE FA LA DIFFERENZA",
+    "title": "IL LATO SANO NEL DETTAGLIO",
+    "items": [
+      {
+        "term": "Ricco di polifenoli",
+        "desc": "Antiossidanti naturali dalle olive di raccolta precoce — conservati perché non applichiamo mai calore."
+      },
+      {
+        "term": "Ricco di grassi monoinsaturi",
+        "desc": "I grassi \"buoni\" associati alla salute del cuore e a una dieta mediterranea equilibrata."
+      },
+      {
+        "term": "Composti antinfiammatori",
+        "desc": "Oleocantale naturale — la fonte di quel pizzico pepato in fondo alla gola."
+      }
+    ]
+  }
+}
