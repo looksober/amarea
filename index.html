@@ -53,15 +53,15 @@
       <form class="capture" name="waitlist" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" data-success="hero-form-success">
         <input type="hidden" name="form-name" value="waitlist" />
         <p hidden><input name="bot-field" /></p>
+        <label style="display:flex;align-items:flex-start;gap:6px;cursor:pointer;margin-bottom:8px">
+          <input type="checkbox" name="consent" required style="margin-top:3px;flex-shrink:0" />
+          <span class="fineprint" data-i18n="form.consent">I agree that my email address will be stored to notify me about amarea's launch. See our privacy policy.</span>
+        </label>
         <label class="capture__label" for="hero-email" data-i18n="hero.emailLabel">Your email</label>
         <div class="capture__row">
           <input class="am-input" id="hero-email" type="email" name="email" required placeholder="name@email.com" data-i18n-placeholder="form.emailPlaceholder" />
           <button class="am-btn" type="submit" data-i18n="form.submit">Join the waiting list</button>
         </div>
-        <label style="display:flex;align-items:flex-start;gap:6px;cursor:pointer;margin-top:8px">
-          <input type="checkbox" name="consent" required style="margin-top:3px;flex-shrink:0" />
-          <span class="fineprint" data-i18n="form.consent">I agree that my email address will be stored to notify me about amarea's launch. See our privacy policy.</span>
-        </label>
         <p class="fineprint" data-i18n="hero.finePrint">We'll only write when the new olive oil is ready. No commitment. No newsletters. No spam.</p>
       </form>
       <div id="hero-form-success" class="fineprint" style="display:none" data-i18n="form.success">Thank you! We'll be in touch when amarea launches.</div>
@@ -217,14 +217,14 @@
     <form class="capture" name="waitlist" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" data-success="close-form-success">
       <input type="hidden" name="form-name" value="waitlist" />
       <p hidden><input name="bot-field" /></p>
+      <label style="display:flex;align-items:flex-start;gap:6px;cursor:pointer;margin-bottom:8px">
+        <input type="checkbox" name="consent" required style="margin-top:3px;flex-shrink:0" />
+        <span class="fineprint" data-i18n="form.consent">I agree that my email address will be stored to notify me about amarea's launch. See our privacy policy.</span>
+      </label>
       <div class="capture__row">
         <input class="am-input" type="email" name="email" required placeholder="name@email.com" data-i18n-placeholder="form.emailPlaceholder" />
         <button class="am-btn" type="submit" data-i18n="form.submit">Join the waiting list</button>
       </div>
-      <label style="display:flex;align-items:flex-start;gap:6px;cursor:pointer;margin-top:8px">
-        <input type="checkbox" name="consent" required style="margin-top:3px;flex-shrink:0" />
-        <span class="fineprint" data-i18n="form.consent">I agree that my email address will be stored to notify me about amarea's launch. See our privacy policy.</span>
-      </label>
       <p class="fineprint" style="text-align: center; margin-left: auto; margin-right: auto;" data-i18n="close.finePrint">We'll only write when the new olive oil is ready. No commitment. No newsletters. No spam.</p>
     </form>
     <div id="close-form-success" class="fineprint" style="display:none;text-align:center" data-i18n="form.success">Thank you! We'll be in touch when amarea launches.</div>

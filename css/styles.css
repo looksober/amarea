@@ -250,7 +250,6 @@ h1, h2, h3, p, ul, figure { margin: 0; }
   display: block;
   width: 100%;
   background: var(--green-50);
-  border: var(--border-width) solid var(--color-ink);
   position: relative;
   overflow: hidden;
 }
