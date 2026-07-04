@@ -98,6 +98,12 @@
   "footer": {
     "copy": "Olio Extra Vergine di Oliva · Zürich · © 2026"
   },
+  "form": {
+    "emailPlaceholder": "Your email address",
+    "submit": "Join the waiting list",
+    "consent": "I agree that my email address will be stored to notify me about amarea's launch. See our privacy policy.",
+    "success": "Thank you! We'll be in touch when amarea launches."
+  },
   "soldoutDialog": {
     "eyebrow": "This year's olive oil is sold out",
     "title": "Reserve your tin",

@@ -30,10 +30,46 @@ function loadContent(lang) {
         var value = resolve(data, el.getAttribute('data-i18n-alt'));
         if (value != null) el.alt = value;
       });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+        var value = resolve(data, el.getAttribute('data-i18n-placeholder'));
+        if (value != null) el.placeholder = value;
+      });
     });
 }
 
 loadContent();
+
+// Netlify form submission
+(function () {
+  document.querySelectorAll('form[data-netlify]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var successId = form.getAttribute('data-success');
+      var successEl = successId ? document.getElementById(successId) : null;
+      var errEl = form.querySelector('.form-error');
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error('Network response was not ok');
+          form.style.display = 'none';
+          if (successEl) successEl.style.display = '';
+        })
+        .catch(function () {
+          if (!errEl) {
+            errEl = document.createElement('p');
+            errEl.className = 'form-error fineprint';
+            errEl.style.color = 'var(--green-700)';
+            form.appendChild(errEl);
+          }
+          errEl.textContent = 'Something went wrong. Please try again.';
+        });
+    });
+  });
+})();
 
 // Language picker
 (function () {
