@@ -101,7 +101,8 @@
   "form": {
     "emailPlaceholder": "Deine E-Mail-Adresse",
     "submit": "Auf die Warteliste",
-    "consent": "Ich stimme zu, dass meine E-Mail-Adresse gespeichert wird, um mich über den Launch von amarea zu informieren. Siehe unsere Datenschutzrichtlinie.",
+    "consent": "Ich stimme zu, dass meine E-Mail-Adresse gespeichert wird, um mich über den Launch von amarea zu informieren.",
+    "privacyLink": "Unsere Datenschutzrichtlinie.",
     "success": "Danke! Wir melden uns, wenn amarea startet."
   },
   "soldoutDialog": {

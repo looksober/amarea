@@ -101,7 +101,8 @@
   "form": {
     "emailPlaceholder": "Votre adresse email",
     "submit": "Rejoindre la liste d'attente",
-    "consent": "J'accepte que mon adresse email soit conservée pour me notifier du lancement d'amarea. Voir notre politique de confidentialité.",
+    "consent": "J'accepte que mon adresse email soit conservée pour me notifier du lancement d'amarea.",
+    "privacyLink": "Voir notre politique de confidentialité.",
     "success": "Merci ! Nous vous contacterons lors du lancement d'amarea."
   },
   "soldoutDialog": {

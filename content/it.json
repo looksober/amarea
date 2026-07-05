@@ -101,7 +101,8 @@
   "form": {
     "emailPlaceholder": "Il tuo indirizzo email",
     "submit": "Unisciti alla lista d'attesa",
-    "consent": "Acconsento che il mio indirizzo email venga conservato per ricevere notifiche sul lancio di amarea. Vedi la nostra informativa sulla privacy.",
+    "consent": "Acconsento che il mio indirizzo email venga conservato per ricevere notifiche sul lancio di amarea.",
+    "privacyLink": "Vedi la nostra informativa sulla privacy.",
     "success": "Grazie! Ti contatteremo quando amarea sarà disponibile."
   },
   "soldoutDialog": {
