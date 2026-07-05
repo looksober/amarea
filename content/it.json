@@ -3,14 +3,14 @@
     "tagline": "Olio Extra Vergine di Oliva"
   },
   "hero": {
-    "title": "La vita è troppo breve per un cattivo olio d'oliva",
+    "title": "La vita è troppo breve per un olio d'oliva di scarsa qualità",
     "badge": "L'olio d'oliva di quest'anno è esaurito.",
     "lead": "Tutti meritano un buon olio d'oliva. Un ingrediente così basilare dovrebbe appartenere a ogni cucina moderna (comune). Lo usiamo per cucinare ma anche a crudo per finire i piatti.",
     "emailLabel": "La tua email",
     "emailPlaceholder": "nome@email.com",
     "cta": "Unisciti alla lista d'attesa",
-    "finePrint": "Scriveremo solo quando il nuovo olio d'oliva sarà pronto. Nessun impegno. Nessuna newsletter. Nessuno spam.",
-    "image": "assets/images/hero/hero.webp",
+    "finePrint": "Scriveremo solo quando il nuovo olio d'oliva sarà pronto. Nessun obbligo. Nessuna newsletter. Niente spam.",
+    "image": "assets/images/hero/Pizza-tin-amarea_v2.jpg",
     "imageAlt": "La latta di olio d'oliva Amarea su un bancone da cucina"
   },
   "modern": {
@@ -24,7 +24,7 @@
       "lead": "Molti marchi di olio d'oliva sembrano ancora appartenere alla dispensa dei tuoi nonni. Abbiamo creato qualcosa che vorresti davvero lasciare sul bancone."
     },
     "packaging": {
-      "title": "Nessun vetro rotto. Nessun disordine unto.",
+      "title": "Meno vetro. Meno casino",
       "lead": "Le bottiglie di vetro si rompono. I banconi si ungono. Abbiamo progettato la nostra latta per essere più facile da maneggiare, più difficile da danneggiare e molto più semplice da versare esattamente dove vuoi."
     },
     "image": "assets/images/products/tin.webp",
@@ -36,24 +36,24 @@
   },
   "inside": {
     "health": {
-      "eyebrow": "IL LATO SANO DELLE OLIVE",
-      "title": "L'extra vergine fa la differenza?",
+      "eyebrow": "IL LATO SALUTARE DELLE OLIVE",
+      "title": "Extra vergine fa davvero la differenza?",
       "lead1": "Premiamo le olive a freddo. Questo è il significato di \"extra vergine\". Perché se si riscaldano le olive, si cucina via la personalità. E a noi piace la personalità.",
       "lead2": "La spremitura a freddo conserva tutto il meglio che le olive sviluppano sotto il sole mediterraneo. Gli antiossidanti naturali. Il sapore. Il carattere.",
       "cta": "Il lato sano nel dettaglio"
     },
     "taste": {
       "eyebrow": "IL SAPORE",
-      "title": "Delicatamente amaro, leggermente piccante",
+      "title": "Leggermente amaro e piccante",
       "lead1": "Amarea è single origin. Raccolta precoce. Spremitura a freddo. Molitura poco dopo la raccolta.",
-      "lead2": "Al palato? Delicatamente amaro. Leggermente piccante. Equilibrato. Noterai un delicato aroma di oliva con sentori di erba fresca e foglie di pomodoro. E quel piccolo pizzico pepato alla fine? Non è un difetto. È carattere."
+      "lead2": "Al palato? Delicatamente amaro. Leggermente piccante. Equilibrato. Noterai un delicato aroma di oliva con sentori di erba fresca e foglie di pomodoro. E quella nota piccante alla fine? Non è un errore. È carattere."
     },
     "stats": {
       "coldPressed": { "big": "SPREMITURA A FREDDO", "small": "EVOO estratto a freddo" },
-      "acidity":     { "big": "<0,3%",               "small": "acidità. Significa che le olive sono state raccolte, pressate e imbottigliate quando erano ancora al loro meglio. Il risultato è un sapore più fresco, più sostanze benefiche e un olio ben al di sopra dello standard extra vergine (limite richiesto: 0,8%)." },
+      "acidity":     { "big": "<0,3%",               "small": "di acidità. Significa che le olive sono state raccolte, pressate e imbottigliate quando erano al livello ideale di maturazione. Il risultato è un sapore più fresco, più sostanze benefiche e un olio ben al di sopra dello standard extra vergine." },
       "harvest":     { "big": "Raccolta precoce",    "small": "molitura poco dopo la raccolta, single origin" },
       "additives":   { "big": "0",                   "small": "additivi, mai" },
-      "taste":       { "big": "Sapore",              "small": "come dovrebbe essere l'olio d'oliva" }
+      "taste":       { "big": "Sapore",              "small": "Il sapore dell'olio. Quello vero" }
     }
   },
   "gallery": {
@@ -80,9 +80,9 @@
     ]
   },
   "origin": {
-    "eyebrow": "Fatto nel sud Italia",
-    "title": "Buone olive. Buon tempo. Buon olio.",
-    "lead1": "Siamo appassionati di cucina che vivono a Lucerna, ma con radici nel sud Italia. Dove il sole è forte. Dove la gente parla più forte. Dove il sapore non è negoziabile.",
+    "eyebrow": "Prodotto nel sud Italia",
+    "title": "Olive sane. Bel tempo. Buon olio.",
+    "lead1": "Siamo appassionati di cucina che vivono a Lucerna, ma con radici nel sud Italia. Dove il sole è forte. Dove a tavola di parla a voce alta. Dove il sapore non è negoziabile.",
     "lead2": "Laggiù, le persone si prendono il loro tempo per le cose che contano. Cucinare. Mangiare. Parlare. Stare a tavola più a lungo del previsto.",
     "image": "assets/images/hero/origin.webp",
     "imageAlt": "Uliveto del sud Italia sotto un forte sole estivo"
