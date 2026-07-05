@@ -220,6 +220,8 @@ h1, h2, h3, p, ul, figure { margin: 0; }
   color: var(--badge-text);
   border: 1px solid var(--badge-border);
   border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-align: left;
 }
 .am-badge__info {
   background: none;

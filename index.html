@@ -40,22 +40,22 @@
     <div class="hero__copy">
       <h1 class="display d-2xl" id="hero-headline" style="font-size: 41px" data-i18n="hero.title">ONE INGREDIENT CHEFS NEVER SKIP: OLIVE OIL</h1>
       <p class="lead" data-i18n="hero.lead">Everyone deserves good olive oil. Such a basic ingredient should belong to every (ordinary) modern kitchen. We use it for cooking but also raw to finish dishes.</p>
-      <div class="am-badge" id="hero-badge" style="font-size: 16px; padding: 4px 14px; border-width: 0px">
+      <button class="am-badge" id="soldout-detail" type="button" style="font-size: 16px; padding: 4px 14px; border-width: 0px">
         <span data-i18n="hero.badge">This year's olive oil is sold out.</span>
-        <button class="am-badge__info" type="button" id="soldout-detail" aria-label="More information">
+        <span class="am-badge__info" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="9.25"/>
             <path d="M12 11v5"/>
             <path d="M12 8h.01"/>
           </svg>
-        </button>
-      </div>
+        </span>
+      </button>
       <form class="capture" name="waitlist" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" data-success="hero-form-success">
         <input type="hidden" name="form-name" value="waitlist" />
         <p hidden><input name="bot-field" /></p>
         <label class="consent-label">
           <input class="consent-check" type="checkbox" name="consent" required />
-          <span data-i18n="form.consent">I agree that my email address will be stored to notify me about amarea's launch.</span> <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" class="consent-link" data-i18n="form.privacyLink">See our privacy policy.</a>
+          <span><span data-i18n="form.consent">I agree that my email address will be stored to notify me about amarea's launch.</span> <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" class="consent-link" data-i18n="form.privacyLink">See our privacy policy.</a></span>
         </label>
         <label class="capture__label" for="hero-email" data-i18n="hero.emailLabel">Your email</label>
         <div class="capture__row">
